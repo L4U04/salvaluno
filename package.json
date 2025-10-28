@@ -65,7 +65,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9.33.0",
-    "@prisma-generators/nestjs": "^0.6.0-alpha5",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@tailwindcss/postcss": "^4.1.6",
     "@testing-library/jest-dom": "^6.7.0",
