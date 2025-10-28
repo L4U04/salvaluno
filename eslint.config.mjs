@@ -6,7 +6,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'dist/**','@/lib/database.types.ts'],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'dist/**','src/lib/database.types.ts'],
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: { js },
     extends: ['js/recommended'],
