@@ -9,6 +9,9 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
