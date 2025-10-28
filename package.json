@@ -63,6 +63,7 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
+    "@prisma-generators/nestjs": "0.6.0-alpha5",  
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9.33.0",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
