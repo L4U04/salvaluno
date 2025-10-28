@@ -13,16 +13,28 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import * as React from 'react';
-// Interface para o perfil, para ser partilhada via props
+import { User } from '@supabase/supabase-js';
+
 interface Profile {
   full_name: string | null;
   avatar_url: string | null;
   semestre_ingresso: string | null;
   campus_id: string | null;
 }
+type ConfigurationsContentProps = {
+  profile: Profile | null;
+  setProfile: React.Dispatch<React.SetStateAction<Profile | null>>;
+  loading: boolean;
+  user: User | null;
+};
 
-// Componente wrapper para passar as props corretas para o UserProfile
-function ConfigurationsContent({ profile, setProfile, loading, user }) {
+// 3. APLIQUE O TIPO ': ConfigurationsContentProps' AOS PARÂMETROS
+function ConfigurationsContent({
+  profile,
+  setProfile,
+  loading,
+  user,
+}: ConfigurationsContentProps) {
   return (
     <UserProfile
       profile={profile}
