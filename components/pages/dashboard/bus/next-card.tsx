@@ -38,7 +38,7 @@ interface NextBusInfo {
 
 // --- Funções Auxiliares ---
 
-const calculateCountdown = (targetTime, now) => {
+const calculateCountdown = (targetTime: Date, now: Date) => {
   const totalMinutes = differenceInMinutes(targetTime, now);
   if (totalMinutes < 0) return { hours: 0, minutes: 0 };
   const hours = Math.floor(totalMinutes / 60);
