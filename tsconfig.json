@@ -29,5 +29,5 @@
     ".next/types/**/*.ts",
     "lib/image-loader"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules",".next", "supabase/functions"]
 }
