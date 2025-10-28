@@ -25,7 +25,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
 import { PanelLeftIcon } from 'lucide-react';
 import Link from 'next/link';
-import { on } from 'events';
+
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -520,9 +520,9 @@ const SidebarMenuButton = React.forwardRef<
   ref,
 ) {
   const { isMobile, state, setOpenMobile } = useSidebar();
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (onClick) {
-      (onClick as React.MouseEventHandler<HTMLButtonElement>)(e);
+      (onClick as React.MouseEventHandler<HTMLElement>)(e);
     }
     if (isMobile) {
       setOpenMobile(false);
