@@ -128,7 +128,11 @@ export default function Page() {
           console.error('ERRO AO ATUALIZAR O PERFIL:', updateError.message);
         } else {
           setProfile(prev =>
-            prev ? { ...prev, campus_id: campusId } : { campus_id: campusId },
+            prev ? { ...prev, campus_id: campusId } : { 
+              full_name: null,
+        avatar_url: null,
+        semestre_ingresso: null,
+        campus_id: campusId },
           );
           router.refresh();
         }
