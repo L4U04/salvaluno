@@ -3,8 +3,6 @@
 import * as React from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
-// As suas importações originais.
-// Verifique se os caminhos estão corretos para a sua estrutura.
 import Bus from '@/components/pages/dashboard/bus';
 import Classroom from '@/components/pages/dashboard/class';
 import Reminder from './reminder';

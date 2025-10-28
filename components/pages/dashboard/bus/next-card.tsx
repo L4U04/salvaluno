@@ -14,7 +14,7 @@ interface ScheduleData {
     horario_inicio: string;
     horario_fim: string;
     local_saida: string;
-    [key: string]: any;
+    [key: string]: string;
   }[];
   tipo?: string;
   ponto_partida?: string;

@@ -1,5 +1,5 @@
 import { NextCard } from './next-card';
-import Schedule from './schedule';
+import {Schedule} from './schedule';
 
 export default {
   Schedule,
