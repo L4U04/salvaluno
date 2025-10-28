@@ -53,9 +53,9 @@ export default function SignUpPage() {
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState('');
-  const [setEmailNotConfirmed] = React.useState(false);
-  const [setResendLoading] = React.useState(false);
-  const [setResendMessage] = React.useState('');
+  const [emailNotConfirmed, setEmailNotConfirmed] = React.useState(false);
+  const [resendLoading, setResendLoading] = React.useState(false);
+  const [resendMessage, setResendMessage] = React.useState('');
 
   // Busca inicial de dados
   React.useEffect(() => {
@@ -160,6 +160,23 @@ export default function SignUpPage() {
         redirectTo: `${location.origin}/auth/callback`,
       },
     });
+  };
+
+  const handleResendConfirmation = async () => {
+    setResendLoading(true);
+    setResendMessage('');
+    const { error: resendError } = await supabase.auth.resend({
+      type: 'signup',
+      email: form.email,
+    });
+    setResendLoading(false);
+    if (resendError) {
+      setResendMessage('Erro ao reenviar email: ' + resendError.message);
+    } else {
+      setResendMessage(
+        'Email de confirmação reenviado! Verifique sua caixa de entrada.',
+      );
+    }
   };
 
   return (
