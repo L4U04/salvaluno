@@ -16,10 +16,10 @@ import * as React from 'react';
 import { User } from '@supabase/supabase-js';
 
 interface Profile {
-  full_name: string | null;
-  avatar_url: string | null;
-  semestre_ingresso: string | null;
-  campus_id: string | null;
+  full_name?: string;
+  avatar_url?: string;
+  semestre_ingresso?: string;
+  campus_id?: string;
 }
 type ConfigurationsContentProps = {
   profile: Profile | null;
@@ -37,14 +37,23 @@ function ConfigurationsContent({
 }: ConfigurationsContentProps) {
   return (
     <UserProfile
-      profile={profile}
-      setProfile={setProfile}
-      loading={loading}
-      user={user}
+    profile={
+      profile
+      ? {
+        full_name: profile.full_name ?? undefined,
+        avatar_url: profile.avatar_url ?? undefined,
+        semestre_ingresso: profile.semestre_ingresso ?? undefined,
+      }
+      : null
+    }
+    setProfile={setProfile}
+    loading={loading}
+    user={user}
     />
   );
 }
 
+const HeaderComponent = Header as unknown as React.ComponentType<{ title?: string }>;
 export default function Page() {
   const [activeView, setActiveView] = React.useState('dashboard');
   const supabase = createClientComponentClient();
@@ -73,7 +82,16 @@ export default function Page() {
         if (error) {
           console.error('Erro ao buscar perfil inicial:', error.message);
         }
-        setProfile(profileData);
+        setProfile(
+          profileData
+            ? {
+                full_name: profileData.full_name ?? undefined,
+                avatar_url: profileData.avatar_url ?? undefined,
+                semestre_ingresso: profileData.semestre_ingresso ?? undefined,
+                campus_id: profileData.campus_id ?? undefined,
+              }
+            : null,
+        );
       }
       setLoading(false);
     };
@@ -117,26 +135,31 @@ export default function Page() {
       }
 
       if (profileData && !profileData.campus_id) {
+        // Atualiza o campo campus_id no Supabase
         const { error: updateError } = await supabase
           .from('profiles')
           .update({ campus_id: campusId })
-          .eq('id', userId)
-          .select()
-          .single();
+          .eq('id', userId);
 
         if (updateError) {
           console.error('ERRO AO ATUALIZAR O PERFIL:', updateError.message);
-        } else {
-          setProfile(prev =>
-            prev ? { ...prev, campus_id: campusId } : { 
-              full_name: null,
-        avatar_url: null,
-        semestre_ingresso: null,
-        campus_id: campusId },
-          );
-          router.refresh();
+          Cookies.remove('selected_campus_id');
+          return;
         }
+
+        // Atualiza o estado local — use undefined para campos opcionais (compatível com Profile)
+        setProfile(prev =>
+          prev ? { ...prev, campus_id: campusId } : {
+            full_name: undefined,
+            avatar_url: undefined,
+            semestre_ingresso: undefined,
+            campus_id: campusId,
+          },
+        );
+
+        router.refresh();
       }
+
       Cookies.remove('selected_campus_id');
     };
 
@@ -166,9 +189,9 @@ export default function Page() {
         user={user}
         loading={loading}
       />
-
       <SidebarInset>
-        <Header
+
+        <HeaderComponent
           title={activeView.charAt(0).toUpperCase() + activeView.slice(1)}
         />
         <main className="flex flex-1 flex-col items-center p-4 sm:p-6">

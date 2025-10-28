@@ -48,6 +48,7 @@ export default function Page() {
       router.push('/dashboard');
       router.refresh();
     } catch (e) {
+      console.error('Login error:', e);
       setError('Ocorreu um erro inesperado.');
     } finally {
       setLoading(false);

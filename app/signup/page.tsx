@@ -53,7 +53,6 @@ export default function SignUpPage() {
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState('');
-  const [emailNotConfirmed, setEmailNotConfirmed] = React.useState(false);
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
 
@@ -74,11 +73,15 @@ export default function SignUpPage() {
 
         setUniversities(universitiesRes.data || []);
         setCampuses(campusesRes.data || []);
-      } catch (err: any) {
+      } catch (err: unknown) {
         setError(
           'Não foi possível carregar os dados das universidades e campi.',
         );
-        console.error(err.message);
+        if (err instanceof Error) {
+          console.error(err.message);
+        } else {
+          console.error(err);
+        }
       } finally {
         setLoadingData(false);
       }
@@ -135,9 +138,11 @@ export default function SignUpPage() {
 
     if (supabaseError) {
       setError(supabaseError.message);
-    } else if (data.user && !data.user.email_confirmed_at) {
+      return;
+    }
+
+    if (data?.user && !data.user.email_confirmed_at) {
       setSuccess('Cadastro realizado! Por favor, confirme seu email.');
-      setEmailNotConfirmed(true);
     } else {
       setSuccess('Cadastro realizado com sucesso!');
       router.push('/dashboard');
@@ -316,7 +321,25 @@ export default function SignUpPage() {
               <p className="text-sm text-red-500 text-center">{error}</p>
             )}
             {success && (
-              <p className="text-sm text-green-500 text-center">{success}</p>
+              <div className="flex flex-col items-center gap-2">
+                <p className="text-sm text-green-500 text-center">{success}</p>
+                {success.includes('confirme') && (
+                  <>
+                    <Button
+                      variant="ghost"
+                      onClick={handleResendConfirmation}
+                      disabled={resendLoading}
+                    >
+                      {resendLoading ? 'Enviando...' : 'Reenviar email de confirmação'}
+                    </Button>
+                    {resendMessage && (
+                      <p className="text-sm text-muted-foreground text-center">
+                        {resendMessage}
+                      </p>
+                    )}
+                  </>
+                )}
+              </div>
             )}
 
             <Button type="submit" disabled={isRegistering}>
