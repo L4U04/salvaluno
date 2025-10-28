@@ -50,7 +50,7 @@ export default function Page() {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = React.useState<User | null>(null);
   const [profile, setProfile] = React.useState<Profile | null>(null);
   const [loading, setLoading] = React.useState(true);
 
