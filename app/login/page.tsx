@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Google from '@/components/icons/google';
 import { Button } from '@/components/ui/button';
@@ -21,7 +22,7 @@ export default function Page() {
   const [resendMessage, setResendMessage] = React.useState('');
   const router = useRouter();
 
-  const handleLogin = async e => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
