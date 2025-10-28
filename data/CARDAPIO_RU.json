@@ -1,0 +1,208 @@
+{
+  "meal_schedule": [
+    {
+      "day": "Segunda-feira",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de acerola",
+          "proteina_50g": "Ovo mexido com orégano",
+          "opcao_vegana_50g": "Pão com queijo vegano",
+          "acompanhamento": "Mingau de aveia",
+          "fruta_1_opcao": "Laranja (1 und)",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Jardineira de Frango",
+          "proteina_2": "Coxa e sobrecoxa assada",
+          "guarnicao": "Purê de batata doce",
+          "vegetariano": "Lentilha refogada c/ tomate, cebola e alho",
+          "leguminosa": "Feijão Carioca",
+          "acompanhamento": "Arroz com açafrão",
+          "salada_1": "Alface, tomate e maçã",
+          "salada_2": "Beterraba ralada",
+          "bebida_1_opcao_200ml": "Suco - Goiaba",
+          "sobremesa": "Melão"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "Suco - Frutas",
+          "proteina": "Isca de carne ao molho sugo",
+          "acompanhamento": "Aipim cozido",
+          "salada_1": "Repolho e cenoura ralados",
+          "sopa": "Sopa de massa com legumes",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "Quiche de queijo com brócolis"
+        }
+      }
+    },
+    {
+      "day": "Terça-feira",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de goiaba",
+          "proteina_50g": "Pão de frango",
+          "opcao_vegana_50g": "Soja refogada",
+          "acompanhamento": "Banana da terra cozida",
+          "fruta_1_opcao": "Melancia (1 und)",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Cubos bovino cozido com batatas",
+          "proteina_2": "Carne cozida em tiras ao molho sugo",
+          "guarnicao": "Espaguete ao alho e óleo",
+          "vegetariano": "Charute de repolho com soja",
+          "leguminosa": "Feijão preto",
+          "acompanhamento": "Arroz com beterraba",
+          "salada_1": "Repolho verde, tomate e pepino",
+          "salada_2": "Chuchu com cheiro verde",
+          "bebida_1_opcao_200ml": "Suco - Tamarindo",
+          "sobremesa": "Melancia"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "Suco - Caju",
+          "proteina": "Suíno em cubos ao molho",
+          "acompanhamento": "Arroz com cheiro verde",
+          "salada_1": "Tomate, alface e beterraba ralada",
+          "sopa": "Caldo de abóbora com calabreza",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "Couve-flor refogada"
+        }
+      }
+    },
+    {
+      "day": "Quarta-feira",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de frutas",
+          "proteina_50g": "Logurte",
+          "opcao_vegana_50g": "Logurte vegano",
+          "acompanhamento": "Batata doce",
+          "fruta_1_opcao": "Maçã (1 und)",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Frango ensopado",
+          "proteina_2": "Isca de carne grelhada",
+          "guarnicao": "Farofa amanteigada",
+          "vegetariano": "Empadão de brócolis com batata",
+          "leguminosa": "Feijão Carioca",
+          "acompanhamento": "Arroz com orégano",
+          "salada_1": "Rúcula e cebola",
+          "salada_2": "Abóbora cozida",
+          "bebida_1_opcao_200ml": "Suco - Frutas",
+          "sobremesa": "Laranja"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "Suco - Goiaba",
+          "proteina": "File de carne acebolado",
+          "acompanhamento": "Cuscuz temperado",
+          "salada_1": "Cenoura cozida com cheiro verde",
+          "sopa": "Caldo de legumes",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "Bolinho de lentilha"
+        }
+      }
+    },
+    {
+      "day": "Quinta-feira",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de maracujá",
+          "proteina_50g": "Pão com queijo e presunto",
+          "opcao_vegana_50g": "Pão com queijo vegano",
+          "acompanhamento": "Arroz doce",
+          "fruta_1_opcao": "Melão (1 und)",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Cubos de frango acebolado",
+          "proteina_2": "Bife de frango",
+          "guarnicao": "Legumes a sauté",
+          "vegetariano": "Estrogonofe de brócolis com abóbora e legumes ao molho",
+          "leguminosa": "Feijão fradinho",
+          "acompanhamento": "Arroz com milho",
+          "salada_1": "Couve com cebola roxa",
+          "salada_2": "Beterraba ralada com manga",
+          "bebida_1_opcao_200ml": "Suco - Caju",
+          "sobremesa": "Mariola"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "Suco - Acerola",
+          "proteina": "Escolhidinho de frango",
+          "acompanhamento": "Arroz branco",
+          "salada_1": "Alface com tomate cereja",
+          "sopa": "Sopa de frango desfiada com massa",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "Escolhidinho de legumes com brócolis"
+        }
+      }
+    },
+    {
+      "day": "Sexta-feira",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de umbu",
+          "proteina_50g": "Logurte vegano",
+          "opcao_vegana_50g": "Soja refogada",
+          "acompanhamento": "Banana da terra cozida",
+          "fruta_1_opcao": "Laranja (1 und)",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Cozido",
+          "proteina_2": "File de peixe empanado",
+          "guarnicao": "Arroz",
+          "vegetariano": "Hambúrguer de soja",
+          "leguminosa": "Feijão Carioca",
+          "acompanhamento": "Arroz branco",
+          "salada_1": "Repolho misto com manga",
+          "salada_2": "Grão de bico com tomate",
+          "bebida_1_opcao_200ml": "Suco - Goiaba",
+          "sobremesa": "Goiaba"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "Suco - Graviola",
+          "proteina": "Frango cozido em cubinhos ao sugo",
+          "acompanhamento": "Macarrão ao alho e óleo",
+          "salada_1": "Alface com cebola e azebrinha",
+          "sopa": "Caldo verde com calabreza",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "Soja cozida ao molho vermelho"
+        }
+      }
+    },
+    {
+      "day": "Sábado",
+      "meals": {
+        "07:00": {
+          "bebida_1_opcao_300ml": "Café c/ leite ou café, ou suco de manga",
+          "proteina_50g": "Ovo cremoso com orégano",
+          "opcao_vegana_50g": "...",
+          "acompanhamento": "Pão de forma de cebola",
+          "fruta_1_opcao": "...",
+          "padaria_2_variedades": "1 und"
+        },
+        "11:00-13:30": {
+          "proteina_1": "Frango ensopado",
+          "proteina_2": "Isca de carne bovina grelhada",
+          "guarnicao": "Crème de milho com brócolis, couve-flor e cenoura",
+          "vegetariano": "Ensopado de tomate cereja com amendoim",
+          "leguminosa": "Feijão Carioca",
+          "acompanhamento": "Arroz branco",
+          "salada_1": "Rúcula com tomate",
+          "salada_2": "Milho verde com lentilha cozida e uva passas",
+          "bebida_1_opcao_200ml": "Suco - Acerola",
+          "sobremesa": "Chocolate cremoso"
+        },
+        "17:00-18:30": {
+          "bebida_1_opcao_300ml": "...",
+          "proteina": "...",
+          "acompanhamento": "...",
+          "salada_1": "...",
+          "sopa": "...",
+          "padaria_2_variedades": "1 und",
+          "vegetariano": "..."
+        }
+      }
+    }
+  ]
+}

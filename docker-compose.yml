@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: salvaluno_postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: salvaluno_database
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  postgres_data:
+    driver: local

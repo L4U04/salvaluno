@@ -1,0 +1,165 @@
+{
+  "voltas": [
+    {
+      "volta": "volta_1",
+      "horario_inicio": "06:25",
+      "horario_fim": "10:25",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_2",
+      "horario_inicio": "06:50",
+      "horario_fim": "08:20",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_3",
+      "horario_inicio": "07:10",
+      "horario_fim": "08:40",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_4",
+      "horario_inicio": "07:25",
+      "horario_fim": "08:55",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_5",
+      "horario_inicio": "07:40",
+      "horario_fim": "09:10",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_6",
+      "horario_inicio": "07:55",
+      "horario_fim": "09:25",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_7",
+      "horario_inicio": "08:35",
+      "horario_fim": "12:45",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_8",
+      "horario_inicio": "10:00",
+      "horario_fim": "11:40",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_9",
+      "horario_inicio": "11:30",
+      "horario_fim": "14:20",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_10",
+      "horario_inicio": "11:55",
+      "horario_fim": "13:35",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_11",
+      "horario_inicio": "12:20",
+      "horario_fim": "14:00",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_12",
+      "horario_inicio": "13:00",
+      "horario_fim": "16:25",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_13",
+      "horario_inicio": "13:25",
+      "horario_fim": "15:05",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_14",
+      "horario_inicio": "13:45",
+      "horario_fim": "15:25",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_15",
+      "horario_inicio": "14:00",
+      "horario_fim": "15:40",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_16",
+      "horario_inicio": "15:35",
+      "horario_fim": "18:40",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_17",
+      "horario_inicio": "16:00",
+      "horario_fim": "21:00",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_18",
+      "horario_inicio": "17:30",
+      "horario_fim": "21:00",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_19",
+      "horario_inicio": "17:55",
+      "horario_fim": "19:35",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_20",
+      "horario_inicio": "18:15",
+      "horario_fim": "19:55",
+      "local_saida": "RU/Residências",
+      "local_chegada": "Eng. Florestal"
+    },
+    {
+      "volta": "volta_21",
+      "horario_inicio": "20:40",
+      "horario_fim": "21:00",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_22",
+      "horario_inicio": "21:40",
+      "horario_fim": "22:00",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    },
+    {
+      "volta": "volta_23",
+      "horario_inicio": "22:30",
+      "horario_fim": "22:50",
+      "local_saida": "Garagem",
+      "local_chegada": "Garagem"
+    }
+  ]
+}

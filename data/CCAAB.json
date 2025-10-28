@@ -1,0 +1,1768 @@
+{
+  "disciplinas": {
+    "area_1_ciencias_biologicas": {
+      "graduacao": [
+        {
+          "codigo": "CCA024",
+          "nome": "Biologia Geral",
+          "professor": "Alexandre Moraes Pinheiro"
+        },
+        {
+          "codigo": "CCA025",
+          "nome": "Microbiologia Geral",
+          "professor": "Ana Cristina Fermino Soares"
+        },
+        {
+          "codigo": "CCA040",
+          "nome": "Melhoramento de Plantas",
+          "professor": "Ana Karina da Silva Cavalcante"
+        },
+        {
+          "codigo": "CCA058",
+          "nome": "Genética Geral",
+          "professor": "Ana Paula Cardoso Peixoto"
+        },
+        {
+          "codigo": "CCA117",
+          "nome": "Fisiologia dos Organismos Aquáticos",
+          "professor": "Arielson dos Santos Protázio"
+        },
+        {
+          "codigo": "CCA120",
+          "nome": "Ictiologia",
+          "professor": "Cecilia Dominical Poy"
+        },
+        {
+          "codigo": "CCA137",
+          "nome": "Biologia Celular",
+          "professor": "Edna Lobo Machado"
+        },
+        {
+          "codigo": "CCA164",
+          "nome": "Biologia Sanitária",
+          "professor": "Elissandra Ulbricht Winkler"
+        },
+        {
+          "codigo": "CCA201",
+          "nome": "Anatomia e Fisiologia Animal",
+          "professor": "Evani Souza de Oliveira Strada"
+        },
+        {
+          "codigo": "CCA203",
+          "nome": "Genética e Melhoramento Vegetal e Animal",
+          "professor": "Fabio David Couto"
+        },
+        {
+          "codigo": "CCA237",
+          "nome": "Fisiologia dos Animais Domésticos",
+          "professor": "Gabriel Ribeiro"
+        },
+        {
+          "codigo": "CCA238",
+          "nome": "Histologia e Embriologia",
+          "professor": "Grimaldo Jorge Lemos de Carvalho"
+        },
+        {
+          "codigo": "CCA242",
+          "nome": "Melhoramento Florestal",
+          "professor": "Jacqueline Ramos Machado Braga"
+        },
+        {
+          "codigo": "CCA275",
+          "nome": "Biologia Celular e Molecular",
+          "professor": "Maria Ângela Pereira de Carvalho Costa"
+        },
+        {
+          "codigo": "CCA276",
+          "nome": "Anatomia dos Animais Domésticos",
+          "professor": "Maria Gardenny Ribeiro Pimenta Martins"
+        },
+        {
+          "codigo": "CCA313",
+          "nome": "Biologia Molecular",
+          "professor": "Maria Vanderly Andreia Da Silva"
+        },
+        {
+          "codigo": "CCA318",
+          "nome": "Genética Geral",
+          "professor": "Phelippe Arthur Santos Marbach"
+        },
+        {
+          "codigo": "CCA330",
+          "nome": "Anatomia Humana",
+          "professor": "Ricardo Franco Cunha Moreira"
+        },
+        {
+          "codigo": "CCA331",
+          "nome": "Fisiologia Humana",
+          "professor": "Sandery Souza Mascarenhas"
+        },
+        {
+          "codigo": "CCA332",
+          "nome": "Histologia e Embriologia",
+          "professor": "Simone Alves Silva"
+        },
+        {
+          "codigo": "CCA333",
+          "nome": "Fisiologia Humana e Comparada",
+          "professor": "Soraia Barreto Aguiar Fonteles"
+        },
+        {
+          "codigo": "CCA397",
+          "nome": "Genética Aplicada à Engenharia de Pesca",
+          "professor": "Talita Lopes Honorato"
+        },
+        {
+          "codigo": "CCA412",
+          "nome": "Anatomia dos Animais Domésticos I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA414",
+          "nome": "Anatomia dos Animais Domésticos II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA415",
+          "nome": "Bioquímica e Biologia Animal",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA417",
+          "nome": "Histologia dos Animais Domésticos",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA418",
+          "nome": "Microbiologia Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA420",
+          "nome": "Imunologia Veterinária",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA501",
+          "nome": "Métodos de Melhoramento de Plantas",
+          "professor": "Alexandre Moraes Pinheiro"
+        },
+        {
+          "codigo": "CCA523",
+          "nome": "Técnicas Avançadas na Cultura de Tecidos em Plantas",
+          "professor": "Ana Cristina Fermino Soares"
+        },
+        {
+          "codigo": "CCA543",
+          "nome": "Interação Planta-Microorganismo",
+          "professor": "Ana Karina da Silva Cavalcante"
+        },
+        {
+          "codigo": "CCA546",
+          "nome": "Marcadores Moleculares Aplicação ao Melhoramento Genético de Plantas",
+          "professor": "Ana Paula Cardoso Peixoto"
+        },
+        {
+          "codigo": "CCA547",
+          "nome": "Genética Quantitativa",
+          "professor": "Arielson dos Santos Protázio"
+        },
+        {
+          "codigo": "CCA555",
+          "nome": "Técnicas Laboratoriais Aplicadas à Microbiologia Agrícola",
+          "professor": "Cecilia Dominical Poy"
+        },
+        {
+          "codigo": "CCA558",
+          "nome": "Microbiologia de Alimentos",
+          "professor": "Edna Lobo Machado"
+        },
+        {
+          "codigo": "CCA559",
+          "nome": "Genética Microbiana e Métodos Moleculares Aplicados à Microbiologia",
+          "professor": "Elissandra Ulbricht Winkler"
+        },
+        {
+          "codigo": "CCA563",
+          "nome": "Tópicos Especiais em Microbiologia Agrícola: Microbiologia Industrial",
+          "professor": "Evani Souza de Oliveira Strada"
+        },
+        {
+          "codigo": "CCA605",
+          "nome": "Citogenética Vegetal",
+          "professor": "Fabio David Couto"
+        },
+        {
+          "codigo": "CCA606",
+          "nome": "Conservação de Recursos Genéticos Vegetais",
+          "professor": "Gabriel Ribeiro"
+        },
+        {
+          "codigo": "CCA607",
+          "nome": "Genética de Populações",
+          "professor": "Grimaldo Jorge Lemos de Carvalho"
+        },
+        {
+          "codigo": "CCA608",
+          "nome": "Genética e Evolução",
+          "professor": "Jacqueline Ramos Machado Braga"
+        },
+        {
+          "codigo": "CCA610",
+          "nome": "Métodos de Detecção de Variabilidade Genética",
+          "professor": "Maria Ângela Pereira de Carvalho Costa"
+        },
+        {
+          "codigo": "CCA614",
+          "nome": "Tópicos Avançados em Recursos Genéticos Vegetais",
+          "professor": "Maria Gardenny Ribeiro Pimenta Martins"
+        },
+        {
+          "codigo": "CCA700",
+          "nome": "Ecotoxicologia dos Agrotóxicos",
+          "professor": "Maria Vanderly Andreia Da Silva"
+        },
+        {
+          "codigo": "CCA718",
+          "nome": "Biometria: Análise e Interpretação de Dados Morfogenômicos e Moleculares",
+          "professor": "Phelippe Arthur Santos Marbach"
+        }
+      ]
+    },
+    "area_2_biodiversidade": {
+      "graduacao": [
+        {
+          "codigo": "CCA008",
+          "nome": "Fisiologia Vegetal",
+          "professor": "Alexandra Nassar Caria"
+        },
+        {
+          "codigo": "CCA027",
+          "nome": "Botânica Básica",
+          "professor": "Carla Fernandes Macedo"
+        },
+        {
+          "codigo": "CCA028",
+          "nome": "Botânica Sistemática",
+          "professor": "Carolina Saldanha Scherer"
+        },
+        {
+          "codigo": "CCA029",
+          "nome": "Ecologia Geral",
+          "professor": "Clovis Pereira Peixoto"
+        },
+        {
+          "codigo": "CCA032",
+          "nome": "Ecologia Geral",
+          "professor": "Elinsmar Vitoria Adoruo"
+        },
+        {
+          "codigo": "CCA096",
+          "nome": "Ecologia Florestal",
+          "professor": "Elvis Lima Vieira"
+        },
+        {
+          "codigo": "CCA112",
+          "nome": "Botânica Aquática",
+          "professor": "Fabiano Machado Martins"
+        },
+        {
+          "codigo": "CCA119",
+          "nome": "Plantctologia",
+          "professor": "Geni da Silva Sodré"
+        },
+        {
+          "codigo": "CCA179",
+          "nome": "Ictiologia",
+          "professor": "Gislaene Marcolino Guidelli"
+        },
+        {
+          "codigo": "CCA171",
+          "nome": "Malacologia",
+          "professor": "Guilherme de Oliveira"
+        },
+        {
+          "codigo": "CCA194",
+          "nome": "Ecologia Aplicada e Controle da Poluição",
+          "professor": "Lidyane Yuriko Saleme Aona"
+        },
+        {
+          "codigo": "CCA217",
+          "nome": "Fisiologia Pós-Colheita de Fruto e Hortaliças",
+          "professor": "Marcio Lacerda Lopes Martins"
+        },
+        {
+          "codigo": "CCA263",
+          "nome": "Fitosociologia",
+          "professor": "Marcos Gonçalves Lhano"
+        },
+        {
+          "codigo": "CCA277",
+          "nome": "Biologia Vegetal I",
+          "professor": "Marcos Roberto Rossi dos Santos"
+        },
+        {
+          "codigo": "CCA279",
+          "nome": "Biologia Floral",
+          "professor": "Marlon Paluch"
+        },
+        {
+          "codigo": "CCA289",
+          "nome": "Sistemática Filogenética",
+          "professor": "Milson dos Anjos Batista"
+        },
+        {
+          "codigo": "CCA311",
+          "nome": "Introdução às Ciências Biológicas",
+          "professor": "Rodrigo Ferreira Ribas"
+        },
+        {
+          "codigo": "CCA312",
+          "nome": "Morfologia e Anatomia das Angiospermas",
+          "professor": "Thiago Schwarz da Rocha"
+        },
+        {
+          "codigo": "CCA315",
+          "nome": "Zoologia de Fanerógamas I",
+          "professor": "Wellington Antonio Bastos Almeida"
+        },
+        {
+          "codigo": "CCA316",
+          "nome": "Sistemática de Fanerógamas",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA317",
+          "nome": "Zoologia de Invertebrados II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA319",
+          "nome": "Introdução à Ecologia",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA059",
+          "nome": "Ecossistemas Tropicais",
+          "professor": "Alexandra Nassar Caria"
+        },
+        {
+          "codigo": "CCA666",
+          "nome": "Antropoides de Importância Econômica",
+          "professor": "Carla Fernandes Macedo"
+        },
+        {
+          "codigo": "CCA691",
+          "nome": "Identificação de Insetos",
+          "professor": "Carolina Saldanha Scherer"
+        },
+        {
+          "codigo": "CCA751",
+          "nome": "Ecologia e Comportamento de Insetos",
+          "professor": "Clovis Pereira Peixoto"
+        },
+        {
+          "codigo": "CCA750",
+          "nome": "Morfologia de Insetos",
+          "professor": "Elinsmar Vitoria Adoruo"
+        },
+        {
+          "codigo": "CCA752",
+          "nome": "Técnicas Experimentais em Entomologia",
+          "professor": "Elvis Lima Vieira"
+        },
+        {
+          "codigo": "CCA767",
+          "nome": " marketsAnatomia Vegetal",
+          "professor": "Fabiano Machado Martins"
+        },
+        {
+          "codigo": "CCA603",
+          "nome": "Fisiologia Vegetal",
+          "professor": "Geni da Silva Sodré"
+        },
+        {
+          "codigo": "CCA505",
+          "nome": "Fisiologia da Produção",
+          "professor": "Gislaene Marcolino Guidelli"
+        },
+        {
+          "codigo": "CCA766",
+          "nome": "Sistemática Vegetal e Biologia Reprodutiva",
+          "professor": "Guilherme de Oliveira"
+        }
+      ]
+    },
+    "area_3_fitotecnia": {
+      "graduacao": [
+        {
+          "codigo": "CCA001",
+          "nome": "Olericultura",
+          "professor": "Ana Cristina Vello Loyola Dantas"
+        },
+        {
+          "codigo": "CCA002",
+          "nome": "Fruticultura",
+          "professor": "Edgar Santos Filho"
+        },
+        {
+          "codigo": "CCA010",
+          "nome": "Plantas Graníferas",
+          "professor": "José Lydio Meira"
+        },
+        {
+          "codigo": "CCA059",
+          "nome": "Fitopatologia Geral",
+          "professor": "Lea Araujo de Carvalho"
+        },
+        {
+          "codigo": "CCA060",
+          "nome": "Culturas Regionais I",
+          "professor": "Manoel Teixeira de Castro Neto"
+        },
+        {
+          "codigo": "CCA064",
+          "nome": "Processamento de Produtos de Origem Animal e Vegetal",
+          "professor": "Maria de Conceição de Menezes Soglia"
+        },
+        {
+          "codigo": "CCA204",
+          "nome": "Fitotecnia I",
+          "professor": "Orlando Luiz Cardoso"
+        },
+        {
+          "codigo": "CCA207",
+          "nome": "Fitotecnia II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA209",
+          "nome": "Paisagismo",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA396",
+          "nome": "Algocultura",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA526",
+          "nome": "Tópicos Especiais em Fitotecnia I",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA543",
+          "nome": "Interação Planta-Microorganismo",
+          "professor": "Ana Cristina Vello Loyola Dantas"
+        },
+        {
+          "codigo": "CCA612",
+          "nome": "Propagação de Plantas",
+          "professor": "Edgar Santos Filho"
+        },
+        {
+          "codigo": "CCA660",
+          "nome": "Clínica Fitossanitária",
+          "professor": "José Lydio Meira"
+        },
+        {
+          "codigo": "CCA753",
+          "nome": "Tópicos Avançados em Ciências Agrárias I",
+          "professor": "Lea Araujo de Carvalho"
+        },
+        {
+          "codigo": "CCA754",
+          "nome": "Tópicos Avançados em Ciências Agrárias II",
+          "professor": "Manoel Teixeira de Castro Neto"
+        }
+      ]
+    },
+    "area_4_ciencias_do_solo": {
+      "graduacao": [
+        {
+          "codigo": "CCA005",
+          "nome": "Física do Solo",
+          "professor": "Aureo Ranulfo dos Santos"
+        },
+        {
+          "codigo": "CCA007",
+          "nome": "Manejo e Conservação do Solo e da Água",
+          "professor": "Jorge Antonio Gonza Santos"
+        },
+        {
+          "codigo": "CCA011",
+          "nome": "Fertilizantes e Fertilidade do Solo",
+          "professor": "Jorge Fernando Guerreiro"
+        },
+        {
+          "codigo": "CCA034",
+          "nome": "Biologia do Solo",
+          "professor": "José Carlos Ribeiro de Carvalho"
+        },
+        {
+          "codigo": "CCA042",
+          "nome": "Nutrição Mineral de Plantas",
+          "professor": "José Fernandes de Melo Filho"
+        },
+        {
+          "codigo": "CCA211",
+          "nome": "Gênese e Morfologia do Solo",
+          "professor": "Julio Cesar Azevedo Nobrega"
+        },
+        {
+          "codigo": "CCA281",
+          "nome": "Fundamentos de Solo I",
+          "professor": "Luciana da Silva Souza"
+        },
+        {
+          "codigo": "CCA307",
+          "nome": "Fundamentos de Solo II",
+          "professor": "Oldair Del Arco Vinhas Costa"
+        },
+        {
+          "codigo": "CCA310",
+          "nome": "Química e Fertilidade do Solo",
+          "professor": "Paula Angela U. Guedes Alcoforado"
+        },
+        {
+          "codigo": "CCA311",
+          "nome": "Gênese e Morfologia do Solo",
+          "professor": "Paulo Gabriel Soledade Nacif"
+        },
+        {
+          "codigo": "CCA281",
+          "nome": "Fundamentos de Solo I",
+          "professor": "Washington Luiz Cotrim Duarte"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA510",
+          "nome": "Biologia do Solo",
+          "professor": "Aureo Ranulfo dos Santos"
+        },
+        {
+          "codigo": "CCA640",
+          "nome": "Física do Solo",
+          "professor": "Jorge Antonio Gonza Santos"
+        },
+        {
+          "codigo": "CCA645",
+          "nome": "Nutrição Mineral de Plantas",
+          "professor": "Jorge Fernando Guerreiro"
+        },
+        {
+          "codigo": "CCA646",
+          "nome": "Pedologia Ambiental",
+          "professor": "José Carlos Ribeiro de Carvalho"
+        },
+        {
+          "codigo": "CCA649",
+          "nome": "Relação Solo-Planta",
+          "professor": "José Fernandes de Melo Filho"
+        },
+        {
+          "codigo": "CCA653",
+          "nome": "Sistema de Informação Geográfica Aplicada ao Planejamento Ambiental",
+          "professor": "Julio Cesar Azevedo Nobrega"
+        },
+        {
+          "codigo": "CCA654",
+          "nome": "Manejo e Conservação de Solos",
+          "professor": "Luciana da Silva Souza"
+        },
+        {
+          "codigo": "CCA654",
+          "nome": "Química do Solo",
+          "professor": "Oldair Del Arco Vinhas Costa"
+        },
+        {
+          "codigo": "CCA763",
+          "nome": "Matéria Orgânica do Solo",
+          "professor": "Paulo Gabriel Soledade Nacif"
+        }
+      ]
+    },
+    "area_5_engenharia_agricola": {
+      "graduacao": [
+        {
+          "codigo": "CCA035",
+          "nome": "Meteorologia Climatologia Agrícola",
+          "professor": "Aureo Silva de Oliveira"
+        },
+        {
+          "codigo": "CCA039",
+          "nome": "Irrigação e Drenagem",
+          "professor": "Eton da Silva Leite"
+        },
+        {
+          "codigo": "CCA065",
+          "nome": "Irrigação por Aspersão",
+          "professor": "Francisco Adriano de Carvalho Pereira"
+        },
+        {
+          "codigo": "CCA066",
+          "nome": "Irrigação Localizada",
+          "professor": "Marcos Roberto da Silva"
+        },
+        {
+          "codigo": "CCA244",
+          "nome": "Mecanização, Colheita e Transporte Florestal",
+          "professor": "Tales Miller Soares"
+        },
+        {
+          "codigo": "CCA272",
+          "nome": "Otimização Florestal",
+          "professor": "Vital Pedro da Silva Paz"
+        },
+        {
+          "codigo": "CCA526GR",
+          "nome": "Mecanização Agrícola e Logística",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA527GR",
+          "nome": "Máquinas e Motores Utilizados na Pesca",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA541GR",
+          "nome": "Agricultura e Floresta de Precisão",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA544GR",
+          "nome": "Mecanização e Mecanização Florestal",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA569",
+          "nome": "Projeto e Avaliação de Sistemas de Irrigação",
+          "professor": "Aureo Silva de Oliveira"
+        },
+        {
+          "codigo": "CCA570",
+          "nome": "Micrometeorologia Agrícola",
+          "professor": "Eton da Silva Leite"
+        },
+        {
+          "codigo": "CCA574",
+          "nome": "Otimização do Uso da Água em Sistemas Hidroagrícolas",
+          "professor": "Francisco Adriano de Carvalho Pereira"
+        },
+        {
+          "codigo": "CCA721",
+          "nome": "Instrumentação na Agricultura",
+          "professor": "Marcos Roberto da Silva"
+        },
+        {
+          "codigo": "CCA722",
+          "nome": "Projetos e Avaliação de Sistemas de Irrigação",
+          "professor": "Tales Miller Soares"
+        },
+        {
+          "codigo": "CCA723",
+          "nome": "Manejo de Irrigação na Produção Vegetal",
+          "professor": "Vital Pedro da Silva Paz"
+        },
+        {
+          "codigo": "CCA724",
+          "nome": "Dinâmica da Água no Solo",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA725",
+          "nome": "Água e Sustentabilidade no Sistema Solo Planta",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA726",
+          "nome": "Qualidade, Tratamento e Reuso da Água",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA727",
+          "nome": "Geoinformação e Sensoriamento Remoto",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA730",
+          "nome": "Matemática Aplicada à Engenharia de Água e Solo",
+          "professor": "Não informado"
+        }
+      ]
+    },
+
+    "area_6_recursos_florestais": {
+      "graduacao": [
+        {
+          "codigo": "CCA012",
+          "nome": "Silvicultura",
+          "professor": "Andrea Vita Reis Mendonça"
+        },
+        {
+          "codigo": "CCA094",
+          "nome": "Inventário Florestal",
+          "professor": "Clair Rogério da Cruz"
+        },
+        {
+          "codigo": "CCA098",
+          "nome": "Entomologia Florestal",
+          "professor": "Cláudia Márcia Gomes"
+        },
+        {
+          "codigo": "CCA236",
+          "nome": "Introdução à Informática e a Engenharia Florestal",
+          "professor": "Deoclides Ricardo de Souza"
+        },
+        {
+          "codigo": "CCA240",
+          "nome": "Biometria Florestal",
+          "professor": "Edson Ferreira Duarte"
+        },
+        {
+          "codigo": "CCA241",
+          "nome": "Anatomia e Química da Madeira",
+          "professor": "Everton Luis Poelking"
+        },
+        {
+          "codigo": "CCA243",
+          "nome": "Patologia e Pragas Florestais",
+          "professor": "Jesus Manuel Delgado Mendez"
+        },
+        {
+          "codigo": "CCA245",
+          "nome": "Dendrologia",
+          "professor": "José Mauro de Almeida"
+        },
+        {
+          "codigo": "CCA246",
+          "nome": "Manejo Florestal",
+          "professor": "Josival Santos Souza"
+        },
+        {
+          "codigo": "CCA247",
+          "nome": "Silvicultura I",
+          "professor": "Rozimar de Campos Pereira"
+        },
+        {
+          "codigo": "CCA248",
+          "nome": "Industrialização da Madeira",
+          "professor": "Teresa Aparecida Soares de Freitas"
+        },
+        {
+          "codigo": "CCA249",
+          "nome": "Silvicultura II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA253",
+          "nome": "Sistemática Agroflorestal",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA254",
+          "nome": "Início Florestal",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA255",
+          "nome": "Recuperação de Áreas Degradadas (EF)",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA609",
+          "nome": "Manejo de Populações Naturais",
+          "professor": "Andrea Vita Reis Mendonça"
+        },
+        {
+          "codigo": "CCA688",
+          "nome": "Planejamento e Gestão Ambiental",
+          "professor": "Clair Rogério da Cruz"
+        }
+      ]
+    },
+    "area_7_producao_animal": {
+      "graduacao": [
+        {
+          "codigo": "CCA003",
+          "nome": "Entomologia Agrícola",
+          "professor": "Adriana Regina Bagaldo"
+        },
+        {
+          "codigo": "CCA014",
+          "nome": "Pastagens e Plantas Forrageiras dos Animais Domésticos",
+          "professor": "Carlos Alfredo Lopes de Carvalho"
+        },
+        {
+          "codigo": "CCA015",
+          "nome": "Apicultura",
+          "professor": "Daniele Rebouças Santana Loures"
+        },
+        {
+          "codigo": "CCA016",
+          "nome": "Cunicultura",
+          "professor": "Fabiana Lana de Araujo"
+        },
+        {
+          "codigo": "CCA020",
+          "nome": "Avicultura e Suinocultura",
+          "professor": "Gabriel Jorge Carneiro de Oliveira"
+        },
+        {
+          "codigo": "CCA021",
+          "nome": "Equideotecnia",
+          "professor": "Jerônimo Avito Gonçalves Brito"
+        },
+        {
+          "codigo": "CCA041",
+          "nome": "Melhoramento Animal",
+          "professor": "José Arlindo Pereira"
+        },
+        {
+          "codigo": "CCA050",
+          "nome": "Piscicultura",
+          "professor": "Laudil Cunha Leite"
+        },
+        {
+          "codigo": "CCA063",
+          "nome": "Princípios de Tecnologia de Alimentos",
+          "professor": "Leopoldo Melo Barreto"
+        },
+        {
+          "codigo": "CCA070",
+          "nome": "Preservação e Manejo de Animais Silvestres em Cativeiro",
+          "professor": "Marcelo Carneiro de Freitas"
+        },
+        {
+          "codigo": "CCA072",
+          "nome": "Bioclimatologia Animal e Ambiciência",
+          "professor": "Maria das Graças Vidal Alves"
+        },
+        {
+          "codigo": "CCA073",
+          "nome": "Alimentos e Alimentação",
+          "professor": "Mariana Cutolo de Araujo"
+        },
+        {
+          "codigo": "CCA074",
+          "nome": "Melhoramento Animal I",
+          "professor": "Meiby Carneiro de Paula Leite"
+        },
+        {
+          "codigo": "CCA075",
+          "nome": "Melhoramento Animal II",
+          "professor": "Moacyr Serafim Junior"
+        },
+        {
+          "codigo": "CCA080",
+          "nome": "Bovinocultura de Corte",
+          "professor": "Nadiene Muller"
+        },
+        {
+          "codigo": "CCA081",
+          "nome": "Bovinocultura de Leite",
+          "professor": "Nadine Suely Evangelista Barreto"
+        },
+        {
+          "codigo": "CCA082",
+          "nome": "Avicultura",
+          "professor": "Priscila Furtado Campos"
+        },
+        {
+          "codigo": "CCA083",
+          "nome": "Suinocultura",
+          "professor": "Ricardo Duarte Abreu"
+        },
+        {
+          "codigo": "CCA084",
+          "nome": "Bubalinocultura",
+          "professor": "Rodrigo Fortes da Silva"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA522",
+          "nome": "Polinização e Produtos das Abelhas",
+          "professor": "Adriana Regina Bagaldo"
+        },
+        {
+          "codigo": "CCA545",
+          "nome": "Manejo e Conservação de Polinizadores",
+          "professor": "Carlos Alfredo Lopes de Carvalho"
+        },
+        {
+          "codigo": "CCA580",
+          "nome": "Alimentos e Alimentação",
+          "professor": "Daniele Rebouças Santana Loures"
+        },
+        {
+          "codigo": "CCA582",
+          "nome": "Avicultura",
+          "professor": "Fabiana Lana de Araujo"
+        },
+        {
+          "codigo": "CCA583",
+          "nome": "Biologia Aplicada à Bioquímica Animal",
+          "professor": "Gabriel Jorge Carneiro de Oliveira"
+        },
+        {
+          "codigo": "CCA587",
+          "nome": "Formação e Manejo de Pastagens na Catinga",
+          "professor": "Jerônimo Avito Gonçalves Brito"
+        },
+        {
+          "codigo": "CCA590",
+          "nome": "Nutrição de Monogástricos",
+          "professor": "José Arlindo Pereira"
+        },
+        {
+          "codigo": "CCA591",
+          "nome": "Nutrição de Ruminantes",
+          "professor": "Laudil Cunha Leite"
+        },
+        {
+          "codigo": "CCA592",
+          "nome": "Produção de Caprinos e Ovinos de Corte",
+          "professor": "Leopoldo Melo Barreto"
+        },
+        {
+          "codigo": "CCA594",
+          "nome": "Qualidade Microbiológica e Físico-Química de Produtos de Origem Animal",
+          "professor": "Marcelo Carneiro de Freitas"
+        },
+        {
+          "codigo": "CCA596",
+          "nome": "Métodos de Controle de Pragas de Pastagens",
+          "professor": "Maria das Graças Vidal Alves"
+        },
+        {
+          "codigo": "CCA597",
+          "nome": "Piscicultura Marinha e Interior",
+          "professor": "Mariana Cutolo de Araujo"
+        },
+        {
+          "codigo": "CCA599",
+          "nome": "Bovinocultura de Corte",
+          "professor": "Meiby Carneiro de Paula Leite"
+        },
+        {
+          "codigo": "CCA600",
+          "nome": "Tópicos Especiais em Ruminantes",
+          "professor": "Nadiene Muller"
+        },
+        {
+          "codigo": "CCA601",
+          "nome": "Tópicos Especiais em Aquicultura",
+          "professor": "Nadine Suely Evangelista Barreto"
+        },
+        {
+          "codigo": "CCA602",
+          "nome": "Produção de Volumosos e Conservação de Forragens",
+          "professor": "Priscila Furtado Campos"
+        },
+        {
+          "codigo": "CCA630",
+          "nome": "Comportamento de Animais de Produção",
+          "professor": "Ricardo Duarte Abreu"
+        }
+      ]
+    },
+    "area_8_saude_animal": {
+      "graduacao": [
+        {
+          "codigo": "CCA452",
+          "nome": "Preservação e Manejo dos Animais Silvestres",
+          "professor": "Alexandre Redson Soares da Silva"
+        },
+        {
+          "codigo": "CCA422",
+          "nome": "Nutrição e Alimentação dos Animais",
+          "professor": "Cristiane Silva Aguiar"
+        },
+        {
+          "codigo": "CCA455",
+          "nome": "Cultivo de Peixes Ornamentais",
+          "professor": "Flavia Santin"
+        },
+        {
+          "codigo": "CCA478",
+          "nome": "Ranicultura",
+          "professor": "Joselito Nunes Costa"
+        },
+        {
+          "codigo": "CCA479",
+          "nome": "Técnicas em Mergulho Subaquático",
+          "professor": "Larissa Pires Barbosa"
+        },
+        {
+          "codigo": "CCA488",
+          "nome": "Piscicultura Marinha",
+          "professor": "Letícia Santos Rezende"
+        },
+        {
+          "codigo": "CCA509",
+          "nome": "Produção de Suínos e Aves",
+          "professor": "Luciano da Anunciação Pimentel"
+        },
+        {
+          "codigo": "CCA510",
+          "nome": "Produção de Caprinos e Herbívoros",
+          "professor": "Ludmilla Santana Soares e Barros"
+        },
+        {
+          "codigo": "CCA546RA",
+          "nome": "Produção de Raças para Animais Domésticos",
+          "professor": "Natale Ferreira Borges"
+        },
+        {
+          "codigo": "CCA282",
+          "nome": "Parasitologia Animal",
+          "professor": "Pedro Miguel O. Campos Pedroso"
+        },
+        {
+          "codigo": "CCA288",
+          "nome": "Reprodução Animal e Biotécnicas",
+          "professor": "Raul Rio Ribeiro"
+        },
+        {
+          "codigo": "CCA423",
+          "nome": "Histologia",
+          "professor": "Robson Bahia Cerqueira"
+        },
+        {
+          "codigo": "CCA424",
+          "nome": "Farmacologia e Toxicologia Veterinária I",
+          "professor": "Tatiana Pacheco Rodrigues"
+        },
+        {
+          "codigo": "CCA425",
+          "nome": "Parasitologia Veterinária",
+          "professor": "Vanessa Bastos de Castro"
+        },
+        {
+          "codigo": "CCA426",
+          "nome": "Anatomia Patológica Veterinária",
+          "professor": "Verdiana Fernandes da Silveira"
+        },
+        {
+          "codigo": "CCA427",
+          "nome": "Deontologia Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA428",
+          "nome": "Farmacologia e Toxicologia Veterinária II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA429",
+          "nome": "Laboratório Clínico Veterinário",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA430",
+          "nome": "Semiologia Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA431",
+          "nome": "Anestesiologia Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA432",
+          "nome": "Clínicas das Doenças Carenciais, Endócrinas e Metabólicas",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA433",
+          "nome": "Enfermidades Infecciosas dos Animais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA434",
+          "nome": "Enfermidades Parasitárias dos Animais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA435",
+          "nome": "Diagnóstico por Imagem em Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA436",
+          "nome": "Clínica Médica e Terapêutica de Grandes Animais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA437",
+          "nome": "Clínica Médica e Terapêutica de Pequenos Animais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA438",
+          "nome": "Ornitopatologia",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA439",
+          "nome": "Técnica Cirúrgica Veterinária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA440",
+          "nome": "Epidemiologia Veterinária e Zoonoses",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA594",
+          "nome": "Qualidade Microbiológica e Físico-Química de Produtos de Origem Animal",
+          "professor": "Alexandre Redson Soares da Silva"
+        },
+        {
+          "codigo": "CCA633",
+          "nome": "Tópicos Avançados em Reprodução Animal",
+          "professor": "Cristiane Silva Aguiar"
+        },
+        {
+          "codigo": "CCA664",
+          "nome": "Educação Sanitária",
+          "professor": "Flavia Santin"
+        },
+        {
+          "codigo": "CCA665",
+          "nome": "Epidemiologia Animal",
+          "professor": "Joselito Nunes Costa"
+        },
+        {
+          "codigo": "CCA701",
+          "nome": "Doenças Infecciosas com Ênfase nas Principais Zoonoses",
+          "professor": "Larissa Pires Barbosa"
+        },
+        {
+          "codigo": "CCA719",
+          "nome": "Diagnóstico Patológico na Linha de Inspeção",
+          "professor": "Letícia Santos Rezende"
+        }
+      ]
+    },
+    "area_9_ciencias_humanas_e_sociais_aplicadas": {
+      "graduacao": [
+        {
+          "codigo": "CCA006",
+          "nome": "Extensão Rural",
+          "professor": "Aelson Silva de Almeida"
+        },
+        {
+          "codigo": "CCA013",
+          "nome": "Administração Rural",
+          "professor": "Alessandra Bandeira Antunes de Azevedo"
+        },
+        {
+          "codigo": "CCA017",
+          "nome": "Economia Rural",
+          "professor": "Alexandre Americo Almassy Junior"
+        },
+        {
+          "codigo": "CCA018",
+          "nome": "Sociologia Rural",
+          "professor": "Ana Georgina Peixoto Rocha"
+        },
+        {
+          "codigo": "CCA019",
+          "nome": "Política Agrícola e Agrária",
+          "professor": "Daciane de Oliveira Silva"
+        },
+        {
+          "codigo": "CCA210",
+          "nome": "Legislação, Perícias e Ética Profissional",
+          "professor": "Elaine Figueira Norberto Silva"
+        },
+        {
+          "codigo": "CCA239",
+          "nome": "Sociologia Geral",
+          "professor": "Eliene Gomes dos Anjos"
+        },
+        {
+          "codigo": "CCA283",
+          "nome": "Metodologia da Pesquisa",
+          "professor": "Fabio Botelho"
+        },
+        {
+          "codigo": "CCA308",
+          "nome": "Direito Ambiental",
+          "professor": "Flora Bonazzi Piasentin"
+        },
+        {
+          "codigo": "CCA309",
+          "nome": "Economia e Administrabilidade",
+          "professor": "Geraldo Sampaio Costa"
+        },
+        {
+          "codigo": "CCA310",
+          "nome": "Ética e Sustentabilidade",
+          "professor": "José da Conceição Santana"
+        },
+        {
+          "codigo": "CCA340",
+          "nome": "Cálculos Matemáticos e Financeiros",
+          "professor": "José Pereira Mascarenhas Bisneto"
+        },
+        {
+          "codigo": "CCA341",
+          "nome": "Introdução à Administração e Empreendedorismo Social",
+          "professor": "Luzia Gonza Mendes"
+        },
+        {
+          "codigo": "CCA342",
+          "nome": "Técnicas de Ensino e Conhec. Científica",
+          "professor": "Maria Lucia da Silva Sodre"
+        },
+        {
+          "codigo": "CCA343",
+          "nome": "Teoria da Contabilidade",
+          "professor": "Mara Eloy Machado Maturino"
+        },
+        {
+          "codigo": "CCA344",
+          "nome": "Gestão Estratégica de Custos",
+          "professor": "Osia Alexandrina Vasconcelos Duran Passos"
+        },
+        {
+          "codigo": "CCA345",
+          "nome": "Fundamentos de Economia",
+          "professor": "Philippe Jean Louis Sabayrolles"
+        },
+        {
+          "codigo": "CCA346",
+          "nome": "Fundamentos Sócio-Antropológicos Aplicados ao Meio Rural",
+          "professor": "Rosy de Oliveira"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA678",
+          "nome": "Desenvolvimento Local Sustentável",
+          "professor": "Aelson Silva de Almeida"
+        },
+        {
+          "codigo": "CCA681",
+          "nome": "Elaboração, Gestão e Avaliação de Projetos em CT&I",
+          "professor": "Alessandra Bandeira Antunes de Azevedo"
+        },
+        {
+          "codigo": "CCA686",
+          "nome": "Gestão Orçamentária e Financeira de Projetos",
+          "professor": "Alexandre Americo Almassy Junior"
+        },
+        {
+          "codigo": "CCA693",
+          "nome": "Teoria Econômica",
+          "professor": "Ana Georgina Peixoto Rocha"
+        },
+        {
+          "codigo": "CCA694",
+          "nome": "Políticas Sociais na América Latina",
+          "professor": "Daciane de Oliveira Silva"
+        },
+        {
+          "codigo": "CCA697",
+          "nome": "Direito Ambiental",
+          "professor": "Elaine Figueira Norberto Silva"
+        }
+      ]
+    },
+    "area_10_agroecossistemas": {
+      "graduacao": [
+        {
+          "codigo": "CCA206",
+          "nome": "Agroecologia",
+          "professor": "Carlos Eduardo Crispim de Oliveira Ramos"
+        },
+        {
+          "codigo": "CCA215",
+          "nome": "Plantas Medicinais, Condimentares e Aromáticas",
+          "professor": "Daniel Melo de Castro"
+        },
+        {
+          "codigo": "CCA489",
+          "nome": "Introdução à Agroecologia",
+          "professor": "Euzelina dos Santos Borges Inácio"
+        },
+        {
+          "codigo": "CCA490",
+          "nome": "Sistemas Agroecológicos de Produção Vegetal I",
+          "professor": "Flávia Silva Barbosa"
+        },
+        {
+          "codigo": "CCA491",
+          "nome": "Manejo Agroecológico da Produção Animal I",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA544",
+          "nome": "Interação Agro-Planta",
+          "professor": "Carlos Eduardo Crispim de Oliveira Ramos"
+        },
+        {
+          "codigo": "CCA634",
+          "nome": "Agroecologia",
+          "professor": "Daniel Melo de Castro"
+        },
+        {
+          "codigo": "CCA716",
+          "nome": "Plantas Medicinais, Aromáticas e Condimentares",
+          "professor": "Euzelina dos Santos Borges Inácio"
+        },
+        {
+          "codigo": "CCA745",
+          "nome": "Manejo Agroecológico de Plantas Espontâneas",
+          "professor": "Flávia Silva Barbosa"
+        }
+      ]
+    },
+    "area_11_educacao": {
+      "graduacao": [
+        {
+          "codigo": "CCA491",
+          "nome": "Manejo Agroecológico da Produção Animal II",
+          "professor": "Francelia da Silva"
+        },
+        {
+          "codigo": "CCA494",
+          "nome": "Manejo Agroecológico de Solos",
+          "professor": "Rafaela Simão Abrão Nóbrega"
+        },
+        {
+          "codigo": "CCA495",
+          "nome": "Homeopatia Aplicada à Agricultura I",
+          "professor": "Ricardo Mendes da Silva"
+        },
+        {
+          "codigo": "CCA496",
+          "nome": "Manejo Agroecológico de Recursos Hídricos I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA497",
+          "nome": "Homeopatia Aplicada à Agricultura II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA498",
+          "nome": "Manejo Agroecológico de Doenças",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA499",
+          "nome": "Manejo Agroecológico de Pragas",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA538GRA",
+          "nome": "Vivências Práticas em Agroecologia",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA264",
+          "nome": "Educação Ambiental",
+          "professor": "Deivide Garcia da Silva Oliveira"
+        },
+        {
+          "codigo": "CCA334",
+          "nome": "Trabalho de Conclusão de Curso I",
+          "professor": "Neilton da Silva"
+        },
+        {
+          "codigo": "CCA457",
+          "nome": "Psicologia Educacional",
+          "professor": "Pedro Nascimento Melo"
+        },
+        {
+          "codigo": "CCA459",
+          "nome": "Sociologia e Antropologia da Educação",
+          "professor": "Renato de Almeida"
+        },
+        {
+          "codigo": "CCA464",
+          "nome": "Práticas Educacionais em Ecologia",
+          "professor": "Rosane Cardoso Barreto Almassy"
+        },
+        {
+          "codigo": "CCA475",
+          "nome": "Oficina de Ensino em Biologia",
+          "professor": "Rosineide Pereira Mubarack Garcia"
+        },
+        {
+          "codigo": "CCA511GRA",
+          "nome": "Estágio Supervisionado I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA516GRA",
+          "nome": "Filosofia da Educação",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA518GRA",
+          "nome": "Didática I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA519GRA",
+          "nome": "Organização da Educação Brasileira e Políticas Públicas",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA520GRA",
+          "nome": "Estágio Supervisionado II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA521GRA",
+          "nome": "Estágio Supervisionado III",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA522GRA",
+          "nome": "Estágio Supervisionado IV",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA525GRA",
+          "nome": "Ensino e Aprendizagem em Jovens, Adultos e Idosos",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA532GRA",
+          "nome": "Avaliação e Educação",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA533GRA",
+          "nome": "Pesquisa em Educação",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA680",
+          "nome": "Educação Ambiental para a Sustentabilidade",
+          "professor": "Deivide Garcia da Silva Oliveira"
+        }
+      ]
+    },
+    "disciplinas_transversais": {
+      "graduacao": [
+        {
+          "codigo": "CCA046",
+          "nome": "Estágio Supervisionado",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA088",
+          "nome": "Monografia de Zootecnia",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA090",
+          "nome": "Estágio Supervisionado em Zootecnia",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA106",
+          "nome": "Trabalho de Conclusão do Curso",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA212",
+          "nome": "Trabalho de Conclusão de Curso em Agronomia",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA250",
+          "nome": "Pesquisa Orientada [EF]",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA251",
+          "nome": "Estágio Supervisionado",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA252",
+          "nome": "Trabalho de Conclusão do Curso Engenharia Florestal",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA335",
+          "nome": "Trabalho de Conclusão de Curso II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA336",
+          "nome": "Estágio Supervisionado I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA337",
+          "nome": "Estágio Supervisionado II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA338",
+          "nome": "Estágio Supervisionado III",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA339",
+          "nome": "Estágio Supervisionado IV",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA360",
+          "nome": "Estágio Supervisionado em Cooperativismo",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA453",
+          "nome": "Estágio Supervisionado",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA501GRA",
+          "nome": "Trabalho de Conclusão do Curso Engenharia de Pesca",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA503GRA",
+          "nome": "Trabalho de Conclusão do Curso Engenharia de Pesca",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA518",
+          "nome": "Seminário I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA519",
+          "nome": "Seminário II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA527",
+          "nome": "Pesquisa Orientada",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA529",
+          "nome": "Projeto de Dissertação",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA530",
+          "nome": "Desenvolvimento de Pesquisa",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA540",
+          "nome": "Projeto de Tese",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA541",
+          "nome": "Exame de Qualificação",
+          "professor": "Não informado"
+        }
+      ]
+    },
+    "outras_disciplinas": {
+      "graduacao": [
+        {
+          "codigo": "CCA347",
+          "nome": "Teoria Cooperativista II",
+          "professor": "Warli Anjos de Souza"
+        },
+        {
+          "codigo": "CCA349",
+          "nome": "Gestão de Recursos Humanos e Habilidades Gerenciais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA348",
+          "nome": "Administração Contábil e Financeira",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA350",
+          "nome": "Política e Desenvolvimento Territorial",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA351",
+          "nome": "Constituição e Desenvolvimento de Cooperativas",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA352",
+          "nome": "Comunicação em Organizações Sociais",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA353",
+          "nome": "Administração da Produção, Materiais e Logística",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA354",
+          "nome": "Legislação Sanitária e de Trabalho",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA355",
+          "nome": "Metodologia do Desenvolvimento Comunitário",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA356",
+          "nome": "Sustentabilidade Ambiental",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA357",
+          "nome": "Comercialização e Marketing",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA358",
+          "nome": "Legislação Comercial e Tributária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA359",
+          "nome": "Elaboração e Gestão de Projetos Sociais",
+          "professor": "Não informado"
+        }
+      ],
+      "pos_graduacao": [
+        {
+          "codigo": "CCA552",
+          "nome": "Seminários em Microbiologia Agrícola II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA557",
+          "nome": "Seminários em Ciência Animal I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA577",
+          "nome": "Seminários em Ciência Animal II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA615",
+          "nome": "Seminários em Recursos Genéticos Vegetais I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA616",
+          "nome": "Seminários em Recursos Genéticos Vegetais II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA617",
+          "nome": "Estágio Docência",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA617",
+          "nome": "Tirocínio Docente Orientado",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA621",
+          "nome": "Seminário em Ciência Animal II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA625",
+          "nome": "Publicação de Artigo Técnico",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA626",
+          "nome": "Publicação de Artigo Científico",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA635",
+          "nome": "Proficiência em Língua Inglesa",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA638",
+          "nome": "Desenvolvimento em Pesquisa em Solos",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA651",
+          "nome": "Seminário em Ciência do Solo II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA655",
+          "nome": "Seminário de Pesquisa em Defesa Agropecuária",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA657",
+          "nome": "Crédito Público",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA684",
+          "nome": "Gestão Ambiental Municipal - Seminários",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA728",
+          "nome": "Seminários em Agricultura Irrigada e Recursos Hídricos I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA729",
+          "nome": "Seminários em Agricultura Irrigada e Recursos Hídricos II",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA753",
+          "nome": "Tópicos Avançados em Ciências Agrárias I",
+          "professor": "Não informado"
+        },
+        {
+          "codigo": "CCA754",
+          "nome": "Tópicos Avançados em Ciências Agrárias II",
+          "professor": "Não informado"
+        }
+      ]
+    }
+  }
+}

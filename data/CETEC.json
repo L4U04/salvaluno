@@ -1,0 +1,439 @@
+{
+  "disciplinas": [
+    {
+      "codigo": "GCET252",
+      "nome": "Gestão da Qualidade",
+      "professor": "Carlos Alberto Tosta Machado"
+    },
+    {
+      "codigo": "GCET256",
+      "nome": "Projeto de TCC em Engenharia Mecânica",
+      "professor": "Gilmar Emanoel Silva de Oliveira"
+    },
+    {
+      "codigo": "GCET257",
+      "nome": "Sistemas Térmicos I",
+      "professor": "Felipe Andrade Torres"
+    },
+    {
+      "codigo": "GCET272",
+      "nome": "Planejamento e Gestão de Projetos",
+      "professor": "Gilmar Emanoel Silva de Oliveira"
+    },
+    {
+      "codigo": "CET293",
+      "nome": "Projeto de Instalações Elétricas",
+      "professor": "Caio Marco dos Santos Junqueira"
+    },
+    {
+      "codigo": "GCET301",
+      "nome": "Estruturas de Madeira",
+      "professor": "Denis Rinaldi Petrucci"
+    },
+    {
+      "codigo": "CET719",
+      "nome": "Geração de Energia Elétrica",
+      "professor": "Caio Marco dos Santos Junqueira"
+    },
+    {
+      "codigo": "GCET800",
+      "nome": "Materiais de Construção Mecânica I",
+      "professor": "Jania Betânia Alves da Silva"
+    },
+    {
+      "codigo": "GCET815EAD",
+      "nome": "Cálculo IV",
+      "professor": "Anderson Reis da Cruz"
+    },
+    {
+      "codigo": "GCET821",
+      "nome": "Física 1",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET822",
+      "nome": "Física 2",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET826",
+      "nome": "Física Experimental II",
+      "professor": "José Edvaldo de Lima Júnior"
+    },
+    {
+      "codigo": "GCET827",
+      "nome": "Física Experimental III",
+      "professor": "José Edvaldo de Lima Júnior"
+    },
+    {
+      "codigo": "GCET057",
+      "nome": "Geologia Geral",
+      "professor": "Thomas Vincent Gloaguen"
+    },
+    {
+      "codigo": "GCET105",
+      "nome": "Topografia e Geodésia",
+      "professor": "Fabrício de Jesus Ribeiro"
+    },
+    {
+      "codigo": "GCET150",
+      "nome": "Processamento de Dados I",
+      "professor": "Camila Bezerra da Silva"
+    },
+    {
+      "codigo": "GCET828",
+      "nome": "Física Experimental IV",
+      "professor": "José Edvaldo de Lima Júnior"
+    },
+    {
+      "codigo": "GCET244",
+      "nome": "Ensaios Mecânicos",
+      "professor": "Jania Betânia Alves da Silva"
+    },
+    {
+      "codigo": "GCET531",
+      "nome": "Interação Humano-Computador",
+      "professor": "André Luiz Carvalho Ottoni"
+    },
+    {
+      "codigo": "CET537",
+      "nome": "Introdução à Robótica",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET824",
+      "nome": "Física IV",
+      "professor": "Jerre Cristiano Alves dos Santos"
+    },
+    {
+      "codigo": "GCET802EAD",
+      "nome": "Matrizes e Sistemas",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET804EAD",
+      "nome": "Educação Matemática",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET794EAD",
+      "nome": "Diversidade e Relações Étnico-Raciais",
+      "professor": "Sara da Silva Freitas"
+    },
+    {
+      "codigo": "CET110",
+      "nome": "Hidrologia e Climatologia",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET226",
+      "nome": "Circuitos Elétricos I (Prática)",
+      "professor": "Geydison Gonzaga Demetino"
+    },
+    {
+      "codigo": "GCET093",
+      "nome": "Introdução à Engenharia Sanitária e Ambiental",
+      "professor": "Jaildo Santos Pereira"
+    },
+    {
+      "codigo": "GCET028",
+      "nome": "Eletricidade (Prática)",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET109",
+      "nome": "Teoria das Estruturas",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET095",
+      "nome": "Física Geral e Experimental I",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET168",
+      "nome": "Termodinâmica",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET066",
+      "nome": "Química Geral",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET061",
+      "nome": "Geometria Analítica",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET823",
+      "nome": "Física III",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET825",
+      "nome": "Física Experimental I",
+      "professor": "Karen Pinto Ribeiro / Genilson R. Melo"
+    },
+    {
+      "codigo": "GCET029",
+      "nome": "Metodologia Científica",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET830",
+      "nome": "Prática como Componente Curricular (PCC)",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET803EAD",
+      "nome": "História da Matemática",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET806EAD",
+      "nome": "Fundamentos da Aritmética",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET807EAD",
+      "nome": "Estatística e Probabilidade",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET808EAD",
+      "nome": "Didática Geral",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET809EAD",
+      "nome": "Fundamentos e Metodologia da Álgebra",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET810EAD",
+      "nome": "Fundamentos e Metodologia da Geometria",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET811EAD",
+      "nome": "Cálculo II",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET812EAD",
+      "nome": "Introdução à Análise Real",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET813EAD",
+      "nome": "Tópicos de Educação Matemática",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET814EAD",
+      "nome": "Políticas Públicas Educacionais",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET701",
+      "nome": "Trabalho de Conclusão de Curso I",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET702",
+      "nome": "Trabalho de Conclusão de Curso II",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET703",
+      "nome": "Estágio Supervisionado I",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET704",
+      "nome": "Estágio Supervisionado II",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET705",
+      "nome": "Estágio Supervisionado III",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET706",
+      "nome": "Estágio Supervisionado IV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET707",
+      "nome": "Projeto Integrador I",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET708",
+      "nome": "Projeto Integrador II",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET709",
+      "nome": "Projeto Integrador III",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET710",
+      "nome": "Projeto Integrador IV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET711",
+      "nome": "Projeto Integrador V",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET712",
+      "nome": "Projeto Integrador VI",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET713",
+      "nome": "Projeto Integrador VII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET714",
+      "nome": "Projeto Integrador VIII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET715",
+      "nome": "Seminários Temáticos I",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET716",
+      "nome": "Seminários Temáticos II",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET717",
+      "nome": "Seminários Temáticos III",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET718",
+      "nome": "Seminários Temáticos IV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET719",
+      "nome": "Seminários Temáticos V",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET720",
+      "nome": "Seminários Temáticos VI",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET721",
+      "nome": "Seminários Temáticos VII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET722",
+      "nome": "Seminários Temáticos VIII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET723",
+      "nome": "Seminários Temáticos IX",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET724",
+      "nome": "Seminários Temáticos X",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET725",
+      "nome": "Seminários Temáticos XI",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET726",
+      "nome": "Seminários Temáticos XII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET727",
+      "nome": "Seminários Temáticos XIII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET728",
+      "nome": "Seminários Temáticos XIV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET729",
+      "nome": "Seminários Temáticos XV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET730",
+      "nome": "Seminários Temáticos XVI",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET731",
+      "nome": "Seminários Temáticos XVII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET732",
+      "nome": "Seminários Temáticos XVIII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET733",
+      "nome": "Seminários Temáticos XIX",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET734",
+      "nome": "Seminários Temáticos XX",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET735",
+      "nome": "Seminários Temáticos XXI",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET736",
+      "nome": "Seminários Temáticos XXII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET737",
+      "nome": "Seminários Temáticos XXIII",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET738",
+      "nome": "Seminários Temáticos XXIV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET739",
+      "nome": "Seminários Temáticos XXV",
+      "professor": "não especificado"
+    },
+    {
+      "codigo": "GCET740",
+      "nome": "Seminários Temáticos XXVI",
+      "professor": "não especificado"
+    }
+  ]
+}
