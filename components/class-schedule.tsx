@@ -30,7 +30,6 @@ import {
 import { Plus, Trash2, Check } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { cn } from '@/lib/utils';
-import { useMobile } from '@/hooks/use-is-mobile';
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = React.useState(false);
