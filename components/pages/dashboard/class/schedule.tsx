@@ -45,8 +45,8 @@ type Day = 'Seg' | 'Ter' | 'Qua' | 'Qui' | 'Sex' | 'Sab';
 interface ClassSession {
   id: string;
   subjectName: string;
-  professor?: string;
-  room?: string;
+  professor?: string | null;
+  room?: string | null;
   day: Day;
   startTime: string;
   endTime: string;
@@ -364,11 +364,15 @@ export function Schedule() {
       s =>
         s.id !== currentSession.id &&
         s.day === currentSession.day &&
-        ((currentSession.startTime >= s.startTime &&
+        ((currentSession.startTime !== undefined &&
+          currentSession.startTime >= s.startTime &&
           currentSession.startTime < s.endTime) ||
-          (currentSession.endTime > s.startTime &&
+          (currentSession.endTime !== undefined &&
+            currentSession.endTime > s.startTime &&
             currentSession.endTime <= s.endTime) ||
-          (currentSession.startTime <= s.startTime &&
+          (currentSession.startTime !== undefined &&
+            currentSession.endTime !== undefined &&
+            currentSession.startTime <= s.startTime &&
             currentSession.endTime >= s.endTime)),
     );
     if (conflict) {

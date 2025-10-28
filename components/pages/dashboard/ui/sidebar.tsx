@@ -16,7 +16,6 @@ import {
   Cog,
   MailQuestionIcon,
   Inbox,
-  BookOpen,
   GraduationCap,
 } from 'lucide-react';
 import { IntelligentAvatar } from '@/components/ui/intelligent-avatar';
@@ -25,8 +24,12 @@ interface DashboardSidebarProps extends React.ComponentProps<typeof Sidebar> {
   setActiveView: (
     view: 'dashboard' | 'bus' | 'class' | 'configurations' | 'feedback',
   ) => void;
-  profile: any;
-  user: any;
+  profile: {
+    full_name?: string;
+    avatar_url?: string;
+    // Add other expected profile fields here if needed
+  } | null;
+  user: { id: string; email?: string } | null;
   loading: boolean;
 }
 
@@ -64,11 +67,11 @@ export default function DashboardSidebar({
             'Sidebar: Erro ao buscar dados da universidade:',
             error.message,
           );
-        } else if (profileWithUniversity?.campuses) {
+        } else if (profileWithUniversity?.campuses && profileWithUniversity.campuses.length > 0) {
           setUniversityData({
-            has_circular_bus: profileWithUniversity.campuses.has_circular_bus,
+            has_circular_bus: profileWithUniversity.campuses[0].has_circular_bus,
             academic_system_url:
-              profileWithUniversity.campuses.universities?.academic_system_url,
+              profileWithUniversity.campuses[0].universities?.[0]?.academic_system_url,
           });
         }
       }
@@ -94,7 +97,7 @@ export default function DashboardSidebar({
           <div className="flex items-center gap-3">
             <IntelligentAvatar
               fullName={loading ? null : profile?.full_name || 'Visitante'}
-              avatarUrl={loading ? null : profile?.avatar_url}
+              avatarUrl={loading ? null : profile?.avatar_url ?? null}
             />
             <div className="flex flex-col truncate">
               <span className="font-semibold text-sm truncate">

@@ -48,12 +48,10 @@ const calculateCountdown = (targetTime: Date, now: Date) => {
 
 const findNextBus = (
   routes: BusRoute[],
-  universityShortName: string,
 ): NextBusInfo | null => {
   const now = new Date();
-  const currentTimeInMinutes = now.getHours() * 60 + now.getMinutes();
 
-  let allDepartures: NextBusInfo[] = [];
+  const allDepartures: NextBusInfo[] = [];
 
   const dayOfWeek = now.getDay();
   let todayType = 'dias_uteis';
@@ -117,7 +115,7 @@ const findNextBus = (
 export default function NextCard() {
   const supabase = createClientComponentClient();
   const [nextBus, setNextBus] = React.useState<NextBusInfo | null>(null);
-  const [countdown, setCountdown] = React.useState(null);
+  const [countdown, setCountdown] = React.useState<{ hours: number; minutes: number } | null>(null);
   const [hasBusService, setHasBusService] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
@@ -146,7 +144,8 @@ export default function NextCard() {
         .eq('id', user.id)
         .single();
 
-      const hasBus = profile?.campuses?.has_circular_bus || false;
+      const campus = Array.isArray(profile?.campuses) ? profile.campuses[0] : profile?.campuses;
+      const hasBus = campus?.has_circular_bus || false;
       setHasBusService(hasBus);
 
       if (!hasBus) return;
@@ -154,13 +153,11 @@ export default function NextCard() {
       const { data: busData } = await supabase
         .from('bus_routes')
         .select('bus_schedules (valid_on, schedule)')
-        .eq('university_id', profile.campuses.university_id)
+        .eq('university_id', campus?.university_id)
         .eq('is_active', true);
 
       if (busData) {
-        const universityName =
-          profile.campuses.universities?.short_name || 'UNKNOWN';
-        const next = findNextBus(busData, universityName);
+        const next = findNextBus(busData);
         setNextBus(next);
         if (next) {
           setCountdown(calculateCountdown(next.busTime, new Date()));

@@ -68,7 +68,7 @@ export default function FeedbackPage() {
 
       // Limpa o formulário após o envio
       setContent('');
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       console.error('Erro ao enviar feedback:', error);
       toast.error('Erro ao Enviar', {
         description:

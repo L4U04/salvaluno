@@ -38,16 +38,16 @@ export default function Dashboard() {
           .eq('id', user.id)
           .single();
 
-        const hasBus = profile?.campuses?.has_circular_bus || false;
+        const hasBus = profile?.campuses?.[0]?.has_circular_bus || false;
         setHasBusService(hasBus);
 
-        if (!hasBus) return;
+        if (!hasBus || !profile) return;
 
         // A consulta de horários agora usa o university_id vindo de campuses
         const { data: busData } = await supabase
           .from('bus_routes')
           .select('bus_schedules (valid_on, schedule)')
-          .eq('university_id', profile.campuses.university_id)
+          .eq('university_id', profile.campuses?.[0]?.university_id)
           .eq('is_active', true);
 
         if (busData) {

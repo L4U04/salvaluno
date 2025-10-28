@@ -4,12 +4,8 @@ import { IntelligentAvatar } from '@/components/ui/intelligent-avatar';
 import {
   Eye,
   EyeOff,
-  User2,
   Upload,
   Loader2,
-  Check,
-  Plus,
-  Trash2,
 } from 'lucide-react';
 import * as React from 'react';
 import { motion } from 'framer-motion';
@@ -34,14 +30,32 @@ import {
   DialogDescription,
   DialogTrigger,
   DialogFooter,
-  DialogClose,
 } from '@/components/ui/dialog';
 import { toast } from 'sonner';
 
-export default function UserProfile({ profile, setProfile, loading, user }) {
+interface UserProfileProps {
+  profile: {
+    full_name?: string;
+    avatar_url?: string;
+    semestre_ingresso?: string;
+  } | null;
+  setProfile: React.Dispatch<
+    React.SetStateAction<
+      {
+        full_name?: string;
+        avatar_url?: string;
+        semestre_ingresso?: string;
+      } | null
+    >
+  >;
+  loading: boolean;
+  user: { id: string; email?: string; created_at?: string } | null;
+}
+
+export default function UserProfile({ profile, setProfile, loading, user }: UserProfileProps) {
   const supabase = createClientComponentClient();
   const router = useRouter();
-  const fileInputRef = React.useRef(null);
+  const fileInputRef = React.useRef<HTMLInputElement | null>(null);
 
   const [showPassword, setShowPassword] = React.useState(false);
   const [inputSemester, setInputSemester] = React.useState('');
@@ -65,7 +79,7 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
     }
   }, [profile]);
 
-  const handleAvatarUpload = async event => {
+  const handleAvatarUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file || !user) return;
 
@@ -96,8 +110,7 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
       toast.success('Sucesso', {
         description: 'A sua imagem de perfil foi atualizada!',
       });
-    } catch (error) {
-      console.error('Erro ao fazer upload do avatar:', error);
+    } catch {
       toast.error('Erro', {
         description: 'Não foi possível atualizar a sua imagem de perfil.',
       });
@@ -152,7 +165,7 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
         setPasswordSuccess('Senha alterada com sucesso!');
         setPasswordForm({ newPassword: '', confirmPassword: '' });
       }
-    } catch (error) {
+    } catch {
       setPasswordError('Ocorreu um erro inesperado.');
     } finally {
       setIsPasswordChanging(false);
@@ -194,9 +207,6 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
       console.error('Erro inesperado:', err);
     }
   };
-
-  const handlePayment = () => console.log('Área de pagamento clicada!');
-
   if (loading) {
     return (
       <div className="w-full max-w-4xl mx-auto py-8">
@@ -214,7 +224,7 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
     );
   }
 
-  const registrationDate = user
+  const registrationDate = user && user.created_at
     ? new Date(user.created_at).toLocaleDateString('pt-BR', {
         year: 'numeric',
         month: 'long',
@@ -228,8 +238,8 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
         <CardHeader className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <IntelligentAvatar
-              fullName={profile?.full_name}
-              avatarUrl={profile?.avatar_url}
+              fullName={profile?.full_name ?? null}
+              avatarUrl={profile?.avatar_url ?? null}
               className="h-24 w-24 rounded-lg flex-shrink-0"
             />
             <div className="flex flex-col text-center sm:text-left">
@@ -311,6 +321,13 @@ export default function UserProfile({ profile, setProfile, loading, user }) {
             )}
             <Button variant="outline" onClick={handleSwitchAccount}>
               Trocar de Conta
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleRemoveAccount}
+              disabled={isDeleting}
+            >
+              {isDeleting ? 'Removendo...' : 'Remover Conta'}
             </Button>
             <Dialog>
               <DialogTrigger asChild>

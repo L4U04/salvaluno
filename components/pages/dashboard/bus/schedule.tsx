@@ -59,22 +59,29 @@ export function Schedule() {
         if (!user) throw new Error('Utilizador não autenticado.');
 
         // [CORREÇÃO APLICADA AQUI] A consulta agora busca o university_id através do campus.
-        const { data: profile, error: profileError } = await supabase
-          .from('profiles')
-          .select(
-            `
-            campuses (
-              university_id
-            )
-          `,
-          )
-          .eq('id', user.id)
-          .single();
+                interface Campus {
+                  university_id: string;
+                }
+                
+                const { data: profile, error: profileError } = await supabase
+                          .from('profiles')
+                          .select(
+                            `
+                            campuses (
+                              university_id
+                            )
+                          `,
+                          )
+                          .eq('id', user.id)
+                          .single() as { data: { campuses: Campus | Campus[] | null } | null; error: any };
 
         if (profileError) throw profileError;
 
         // Se não houver campus ou university_id, não há nada a fazer.
-        const universityId = profile?.campuses?.university_id;
+        // 'campuses' pode ser um array ou um objeto dependendo da query; normaliza para obter university_id.
+        const campuses = profile?.campuses;
+        const universityId =
+          Array.isArray(campuses) ? campuses[0]?.university_id : campuses?.university_id;
         if (!universityId) {
           setRoutes([]);
           return;
