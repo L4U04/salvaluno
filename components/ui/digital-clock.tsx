@@ -1,28 +1,24 @@
 'use client';
+import { useState, useEffect } from 'react';
 
-import { useEffect, useState } from 'react';
+export default function Clock() {
+  const [time, setTime] = useState(new Date());
+  const [isMounted, setIsMounted] = useState(false); // 1. Adiciona o estado 'isMounted'
 
-export default function DigitalClock() {
-  const [currentTime, setCurrentTime] = useState(new Date());
-
+  // 2. Este useEffect SÓ roda no cliente, após a montagem
   useEffect(() => {
-    const timerId = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
+    setIsMounted(true); // 3. Define como montado
 
-    return () => clearInterval(timerId);
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
   }, []);
 
-  const formattedTime = currentTime.toLocaleTimeString('pt-BR', {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  // 4. Se NÃO estiver montado (no servidor ou 1º render), mostre um placeholder
+  if (!isMounted) {
+    return <div className="w-20 h-5" />; // Retorna um placeholder com tamanho
+    // ou "00:00:00", ou null. O importante é ser igual no servidor e 1º render.
+  }
 
-  return (
-    <div className="flex items-center justify-center rounded-lg px-4 py-2">
-      <p className="font-mono text-base font-semibold tracking-wider text-foreground">
-        {formattedTime}
-      </p>
-    </div>
-  );
+  // 5. Agora que está montado, pode mostrar a hora real.
+  return <div>{time.toLocaleTimeString()}</div>;
 }
