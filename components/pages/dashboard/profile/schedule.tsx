@@ -322,13 +322,6 @@ export default function UserProfile({ profile, setProfile, loading, user }: User
             <Button variant="outline" onClick={handleSwitchAccount}>
               Trocar de Conta
             </Button>
-            <Button
-              variant="destructive"
-              onClick={handleRemoveAccount}
-              disabled={isDeleting}
-            >
-              {isDeleting ? 'Removendo...' : 'Remover Conta'}
-            </Button>
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline">Trocar Senha</Button>
