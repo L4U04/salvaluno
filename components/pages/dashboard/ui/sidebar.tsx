@@ -45,66 +45,58 @@ export default function DashboardSidebar({
   loading,
   ...props
 }: DashboardSidebarProps) {
-  const [universityData, setUniversityData] =
-    React.useState<UniversityData | null>(null);
-  const supabase = createClientComponentClient();
-  const [activeItem, setActiveItem] = React.useState('dashboard');
+const [universityData, setUniversityData] =
+React.useState<UniversityData | null>(null);
+const supabase = createClientComponentClient();
+const [activeItem, setActiveItem] = React.useState('dashboard');
 
-  // Este useEffect agora só busca os dados da universidade, que não vêm do perfil principal
-React.useEffect(() => {
-  const fetchUniversityData = async () => {
-    if (!user?.id) return; // Garante que temos o user.id
 
-    // PASSO 1: Buscar o 'campus_id' do perfil do usuário
-    const { data: profileData, error: profileError } = await supabase
-      .from('profiles')
-      .select('campus_id') // Só precisamos do campus_id
-      .eq('id', user.id)
-      .single();
+ React.useEffect(() => {
+ const fetchUniversityData = async () => {
 
-    if (profileError || !profileData || !profileData.campus_id) {
-      console.error(
-        'Sidebar: Não foi possível encontrar o campus_id do perfil.',
-        profileError?.message,
-      );
-      return; 
-    }
+if (!user?.id || !profile) return;
 
-    // PASSO 2: Agora, buscar os dados do campus usando o ID que encontramos
-    const { data: campusData, error: campusError } = await supabase
-      .from('campuses')
-      .select(
-        'has_circular_bus, universities, academic_system_url' // <--- SUBSTITUA AQUI
-      ) 
-      .eq('id', profileData.campus_id) 
-      .single();
+ const campusId = (profile as any).campus_id; // Pega o campus_id do perfil
 
-    if (campusError) {
-      console.error(
-        'Sidebar: Erro ao buscar dados específicos do campus:',
-        campusError.message,
-      );
-      return;
-    }
+if (!campusId) {
+console.error('Sidebar: Perfil não contém um campus_id.');
+return;
+}
+const { data: campusData, error: campusError } = await supabase
+.from('campuses')
+.select(
 
-    if (campusData) {
-      // console.log('DADOS DO CAMPUS ENCONTRADOS:', campusData); // Descomente para depurar
-      
-      // Ajuste aqui também, dependendo da sua relação (one-to-one ou one-to-many)
-      const academicUrl = campusData.universities?.[academic_system_url] || // Se for 1-para-1
-                          campusData.universities?.[0]?.[academic_system_url]; // Se for 1-para-muitos
-      
-      setUniversityData({
-        has_circular_bus: campusData.has_circular_bus,
-        academic_system_url: academicUrl, // O nome aqui não importa, mas o valor sim
-      });
-    }
-  };
+'has_circular_bus, universities ( academic_system_url )'
+ )
+.eq('id', campusId)
+.single();
 
-  if (!loading) {
-    fetchUniversityData();
-  }
-}, [profile, user, loading, supabase]);
+if (campusError) {
+console.error(
+'Sidebar: Erro ao buscar dados específicos do campus:',
+campusError.message,
+ );
+ return;
+}
+
+if (campusData) {
+
+const academicUrl =
+(campusData.universities as any)?.academic_system_url || // Se for 1-para-1
+(campusData.universities as any)?.[0]?.academic_system_url; // Se for 1-para-muitos
+
+setUniversityData({
+ has_circular_bus: campusData.has_circular_bus,
+academic_system_url: academicUrl || null, // Armazena o link no estado
+ });
+ }
+ };
+
+ // Só executa a busca quando o 'loading' da página principal terminar
+if (!loading) {
+ fetchUniversityData();
+ }
+ }, [profile, user, loading, supabase]); // Dependências corretas
 
 // No seu tipo UniversityData, mude o nome se quiser
 interface UniversityData {
