@@ -51,37 +51,66 @@ export default function DashboardSidebar({
   const [activeItem, setActiveItem] = React.useState('dashboard');
 
   // Este useEffect agora só busca os dados da universidade, que não vêm do perfil principal
-  React.useEffect(() => {
-    const fetchUniversityData = async () => {
-      if (user?.id) {
-        const { data: profileWithUniversity, error } = await supabase
-          .from('profiles')
-          .select(
-            'campuses(has_circular_bus, universities(academic_system_url))',
-          )
-          .eq('id', user.id)
-          .single();
+React.useEffect(() => {
+  const fetchUniversityData = async () => {
+    if (!user?.id) return; // Garante que temos o user.id
 
-        if (error) {
-          console.error(
-            'Sidebar: Erro ao buscar dados da universidade:',
-            error.message,
-          );
-        } else if (profileWithUniversity?.campuses && profileWithUniversity.campuses.length > 0) {
-          setUniversityData({
-            has_circular_bus: profileWithUniversity.campuses[0].has_circular_bus,
-            academic_system_url:
-              profileWithUniversity.campuses[0].universities?.[0]?.academic_system_url,
-          });
-        }
-      }
-    };
+    // PASSO 1: Buscar o 'campus_id' do perfil do usuário
+    const { data: profileData, error: profileError } = await supabase
+      .from('profiles')
+      .select('campus_id') // Só precisamos do campus_id
+      .eq('id', user.id)
+      .single();
 
-    // Só busca depois que o perfil principal já foi carregado
-    if (!loading) {
-      fetchUniversityData();
+    if (profileError || !profileData || !profileData.campus_id) {
+      console.error(
+        'Sidebar: Não foi possível encontrar o campus_id do perfil.',
+        profileError?.message,
+      );
+      return; 
     }
-  }, [profile, user, loading, supabase]);
+
+    // PASSO 2: Agora, buscar os dados do campus usando o ID que encontramos
+    const { data: campusData, error: campusError } = await supabase
+      .from('campuses')
+      .select(
+        'has_circular_bus, universities ( [NOME_DA_SUA_COLUNA_AQUI] )' // <--- SUBSTITUA AQUI
+      ) 
+      .eq('id', profileData.campus_id) 
+      .single();
+
+    if (campusError) {
+      console.error(
+        'Sidebar: Erro ao buscar dados específicos do campus:',
+        campusError.message,
+      );
+      return;
+    }
+
+    if (campusData) {
+      // console.log('DADOS DO CAMPUS ENCONTRADOS:', campusData); // Descomente para depurar
+      
+      // Ajuste aqui também, dependendo da sua relação (one-to-one ou one-to-many)
+      const academicUrl = campusData.universities?.[academic_system_url] || // Se for 1-para-1
+                          campusData.universities?.[0]?.[academic_system_url]; // Se for 1-para-muitos
+      
+      setUniversityData({
+        has_circular_bus: campusData.has_circular_bus,
+        academic_system_url: academicUrl, // O nome aqui não importa, mas o valor sim
+      });
+    }
+  };
+
+  if (!loading) {
+    fetchUniversityData();
+  }
+}, [profile, user, loading, supabase]);
+
+// No seu tipo UniversityData, mude o nome se quiser
+interface UniversityData {
+  has_circular_bus: boolean;
+  academic_system_url: string | null; // Este nome é só interno do React, pode ser o que você quiser
+}
 
   const handleItemClick = (
     itemName: 'dashboard' | 'bus' | 'class' | 'configurations' | 'feedback',
