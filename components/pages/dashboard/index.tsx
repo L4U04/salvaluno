@@ -107,32 +107,32 @@ export default function Dashboard() {
     );
   }
 
-  // Classe da grelha dinâmica: 3 colunas se tiver ônibus, 2 se não tiver
-  // [SEU DESIGN - INTOCADO]
-  const gridColsClass = hasBusService ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
+  // --- CORREÇÃO DO LAYOUT ---
 
-  // [SEU DESIGN - INTOCADO]
+  // Lógica de layout simples: 3 colunas em telas médias se tiver ônibus, 2 se não tiver.
+  const gridColsClass = hasBusService
+    ? 'md:grid-cols-3'
+    : 'md:grid-cols-2';
+
   return (
     <div className="w-full max-w-5xl mx-auto">
       <h1 className="text-2xl font-semibold mb-6">Painel Principal</h1>
 
-      {/* Usamos a classe dinâmica aqui */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 ${gridColsClass} gap-6`}>
-        {/* O card do ônibus (e o seu div pai) só é renderizado se o serviço existir */}
-        {hasBusService && (
-          <div className="lg:col-span-1">
-            <Bus.NextCard />
-          </div>
-        )}
+      {/*
+         A classe do grid-pai agora controla TUDO.
+         NÃO HÁ MAIS 'div' wrappers desnecessários.
+         NÃO HÁ MAIS classes 'lg:col-span-1'.
+.
+         O 'md:grid-cols-2' CONFLITANTE FOI REMOVIDO DA LINHA ABAIXO.
+      */}
+      <div className={`grid grid-cols-1 ${gridColsClass} gap-6`}>
+        {/* O card do ônibus só é renderizado se o serviço existir */}
+        {hasBusService && <Bus.NextCard />}
 
-        <div className="lg:col-span-1">
-          <Classroom.NextCard />
-        </div>
-        <div className="lg:col-span-1">
-          <Reminder.PriorityCard />
-        </div>
+        <Classroom.NextCard />
+        <Reminder.PriorityCard />
       </div>
       <div className="mt-6"></div>
-  t </div>
+    </div>
   );
 }
