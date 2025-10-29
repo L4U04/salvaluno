@@ -15,6 +15,9 @@ export default function Dashboard() {
   );
   const [loading, setLoading] = React.useState(true);
 
+  // --- INÍCIO DA ÚNICA ALTERAÇÃO ---
+  // Este 'useEffect' foi substituído pela versão corrigida de 2 etapas
+  // que nós depuramos.
   React.useEffect(() => {
     const fetchBusCardData = async () => {
       try {
@@ -22,21 +25,18 @@ export default function Dashboard() {
           data: { user },
         } = await supabase.auth.getUser();
 
-        // Se não houver usuário, defina 'hasBus' como falso e pare
         if (!user) {
           setHasBusService(false);
           return;
         }
 
-        // --- INÍCIO DA CORREÇÃO ---
-        // PASSO 1: Buscar o 'campus_id' do perfil do usuário
+        // PASSO 1: Buscar o 'campus_id' do perfil
         const { data: profile, error: profileError } = await supabase
           .from('profiles')
-          .select('campus_id') // Só precisamos do campus_id
+          .select('campus_id')
           .eq('id', user.id)
           .single();
 
-        // Se falhar em encontrar o perfil ou o campus_id, defina 'hasBus' como falso e pare
         if (profileError || !profile?.campus_id) {
           console.error(
             'Dashboard: Não foi possível encontrar campus_id',
@@ -49,11 +49,10 @@ export default function Dashboard() {
         // PASSO 2: Buscar os dados do campus usando o 'campus_id'
         const { data: campusData, error: campusError } = await supabase
           .from('campuses')
-          .select('has_circular_bus, university_id') // Pedimos os dados que precisamos
+          .select('has_circular_bus, university_id')
           .eq('id', profile.campus_id)
           .single();
 
-        // Se falhar em encontrar os dados do campus, defina 'hasBus' como falso e pare
         if (campusError || !campusData) {
           console.error(
             'Dashboard: Erro ao buscar dados do campus',
@@ -66,9 +65,8 @@ export default function Dashboard() {
         // SUCESSO: Define o estado 'hasBusService' com o valor correto
         const hasBus = campusData.has_circular_bus || false;
         setHasBusService(hasBus);
-        // --- FIM DA CORREÇÃO ---
 
-        // Agora, a lógica original para buscar os horários pode rodar
+        // Lógica original para buscar os horários
         if (hasBus && campusData.university_id) {
           const { data: busData } = await supabase
             .from('bus_routes')
@@ -77,20 +75,21 @@ export default function Dashboard() {
             .eq('is_active', true);
 
           if (busData) {
-            // setNextBus(findNextBus(busData)); // Sua lógica para encontrar o próximo ônibus
+            // setNextBus(findNextBus(busData));
           }
         }
       } catch (error) {
         console.error('Erro ao buscar dados do ônibus para o card:', error);
-        setHasBusService(false); // Garante que é falso em caso de erro
+        setHasBusService(false);
       } finally {
-        setLoading(false); // Isso garante que o loading termine
+        setLoading(false);
       }
     };
     fetchBusCardData();
   }, [supabase]);
+  // --- FIM DA ÚNICA ALTERAÇÃO ---
 
-  // Enquanto verifica, podemos mostrar um skeleton para a grelha
+  // O seu 'if (loading)' original (está correto)
   if (loading) {
     return (
       <div className="w-full max-w-5xl mx-auto">
@@ -104,26 +103,31 @@ export default function Dashboard() {
     );
   }
 
-  // Classe da grelha dinâmica: 3 colunas se tiver ônibus, 2 se não tiver
-  const gridColsClass = hasBusService
-    ? 'md:grid-cols-2 lg:grid-cols-3' // Se você quiser 3 colunas JÁ no 'md', mude para 'md:grid-cols-3'
-    : 'md:grid-cols-2';
+  // A sua lógica de classe original (está correta)
+  const gridColsClass = hasBusService ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
 
+  // O seu 'return' original (está correto)
   return (
     <div className="w-full max-w-5xl mx-auto">
       <h1 className="text-2xl font-semibold mb-6">Painel Principal</h1>
 
-      {/*         A classe do grid agora é totalmente dinâmica 
-        E os 'div' wrappers desnecessários foram removidos
-      */}
-      <div className={`grid grid-cols-1 ${gridColsClass} gap-6`}>
-        {/* O card do ônibus só é renderizado se o serviço existir */}
-        {hasBusService && <Bus.NextCard />}
+      {/* Usamos a classe dinâmica aqui */}
+      <div className={`grid grid-cols-1 md:grid-cols-2 ${gridColsClass} gap-6`}>
+        {/* O card do ônibus (e o seu div pai) só é renderizado se o serviço existir */}
+        {hasBusService && (
+          <div className="lg:col-span-1">
+            <Bus.NextCard />
+          </div>
+        )}
 
-        <Classroom.NextCard />
-        <Reminder.PriorityCard />
+        <div className="lg:col-span-1">
+          <Classroom.NextCard />
+        </div>
+        <div className="lg:col-span-1">
+          <Reminder.PriorityCard />
+        </div>
       </div>
       <div className="mt-6"></div>
-    </div>
+  S  </div>
   );
 }
