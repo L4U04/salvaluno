@@ -74,7 +74,7 @@ React.useEffect(() => {
     const { data: campusData, error: campusError } = await supabase
       .from('campuses')
       .select(
-        'has_circular_bus, universities ( [NOME_DA_SUA_COLUNA_AQUI] )' // <--- SUBSTITUA AQUI
+        'has_circular_bus, universities, academic_system_url' // <--- SUBSTITUA AQUI
       ) 
       .eq('id', profileData.campus_id) 
       .single();
