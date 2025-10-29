@@ -104,30 +104,23 @@ export default function Dashboard() {
   }
 
   // A sua lógica de classe original (está correta)
-  const gridColsClass = hasBusService ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
+ const gridColsClass = hasBusService
+    ? 'md:grid-cols-3'
+    : 'md:grid-cols-2';
 
-  // O seu 'return' original (está correto)
   return (
     <div className="w-full max-w-5xl mx-auto">
       <h1 className="text-2xl font-semibold mb-6">Painel Principal</h1>
 
-      {/* Usamos a classe dinâmica aqui */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 ${gridColsClass} gap-6`}>
-        {/* O card do ônibus (e o seu div pai) só é renderizado se o serviço existir */}
-        {hasBusService && (
-          <div className="lg:col-span-1">
-            <Bus.NextCard />
-          </div>
-        )}
+      
+      <div className={`grid grid-cols-1 ${gridColsClass} gap-6`}>
+        {/* O card do ônibus só é renderizado se o serviço existir */}
+        {hasBusService && <Bus.NextCard />}
 
-        <div className="lg:col-span-1">
-          <Classroom.NextCard />
-        </div>
-        <div className="lg:col-span-1">
-          <Reminder.PriorityCard />
-        </div>
+        <Classroom.NextCard />
+        <Reminder.PriorityCard />
       </div>
       <div className="mt-6"></div>
-  S  </div>
+    </div>
   );
 }
