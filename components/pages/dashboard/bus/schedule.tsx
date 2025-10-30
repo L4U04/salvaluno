@@ -6,7 +6,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Info } from 'lucide-react';
 
-// Interfaces para tipar os dados que vêm do Supabase
+
 interface ScheduleData {
   voltas?: {
     volta: string;
@@ -37,7 +37,6 @@ interface BusRoute {
   bus_schedules: BusSchedule[];
 }
 
-// Mapa para traduzir os tipos de dia
 const dayTypeMap: { [key: string]: string } = {
   dias_uteis: 'Dias Úteis',
   sabado: 'Sábado',
@@ -57,9 +56,7 @@ export function Schedule() {
           data: { user },
         } = await supabase.auth.getUser();
         if (!user) throw new Error('Utilizador não autenticado.');
-
-        // [CORREÇÃO APLICADA AQUI] A consulta agora busca o university_id através do campus.
-                interface Campus {
+                        interface Campus {
                   university_id: string;
                 }
                 
@@ -77,8 +74,6 @@ export function Schedule() {
 
         if (profileError) throw profileError;
 
-        // Se não houver campus ou university_id, não há nada a fazer.
-        // 'campuses' pode ser um array ou um objeto dependendo da query; normaliza para obter university_id.
         const campuses = profile?.campuses;
         const universityId =
           Array.isArray(campuses) ? campuses[0]?.university_id : campuses?.university_id;
@@ -101,7 +96,7 @@ export function Schedule() {
             )
           `,
           )
-          .eq('university_id', universityId) // Usa o ID da universidade obtido
+          .eq('university_id', universityId) 
           .eq('is_active', true);
 
         if (busError) throw busError;
@@ -117,7 +112,6 @@ export function Schedule() {
     fetchBusData();
   }, [supabase]);
 
-  // UI para o estado de carregamento
   if (loading) {
     return (
       <div className="flex items-center justify-center h-40">
@@ -127,7 +121,6 @@ export function Schedule() {
     );
   }
 
-  // UI para o estado de erro
   if (error) {
     return (
       <Alert variant="destructive">
@@ -137,7 +130,6 @@ export function Schedule() {
     );
   }
 
-  // UI para quando não há horários
   if (routes.length === 0) {
     return (
       <Alert>
@@ -150,9 +142,7 @@ export function Schedule() {
     );
   }
 
-  // Função auxiliar para renderizar o JSON de horários
   const renderScheduleData = (schedule: ScheduleData) => {
-    // Caso 1: Formato UFRB (com "voltas")
     if (schedule.voltas && Array.isArray(schedule.voltas)) {
       return (
         <div className="overflow-x-auto">
@@ -196,7 +186,6 @@ export function Schedule() {
       );
     }
 
-    // Caso 2: Formato UFBA (com "partidas_fixas")
     if (schedule.tipo === 'partidas_fixas' && schedule.horarios) {
       return (
         <div>
@@ -217,7 +206,6 @@ export function Schedule() {
       );
     }
 
-    // Caso 3: Formato UFSB (com "partidas_por_local")
     if (schedule.tipo === 'partidas_por_local' && schedule.locais) {
       return (
         <div className="space-y-4">
@@ -242,7 +230,6 @@ export function Schedule() {
       );
     }
 
-    // Fallback se o formato for desconhecido
     return (
       <p className="text-sm text-destructive">
         Formato de horário não reconhecido.
@@ -250,7 +237,6 @@ export function Schedule() {
     );
   };
 
-  // UI Principal: Renderiza as rotas e os horários
   return (
     <div className="space-y-8">
       {routes.map(route => (

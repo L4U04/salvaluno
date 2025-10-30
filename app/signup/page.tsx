@@ -16,8 +16,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Eye, EyeOff } from 'lucide-react';
-
-// Interfaces para os dados
 interface University {
   id: string;
   name: string;
@@ -31,8 +29,6 @@ interface Campus {
 export default function SignUpPage() {
   const supabase = createClientComponentClient();
   const router = useRouter();
-
-  // Estados do formulário
   const [form, setForm] = React.useState({
     fullname: '',
     email: '',
@@ -40,15 +36,11 @@ export default function SignUpPage() {
     passwordConfirm: '',
   });
   const [showPassword, setShowPassword] = React.useState(false);
-
-  // Estados para os seletores
   const [universities, setUniversities] = React.useState<University[]>([]);
   const [campuses, setCampuses] = React.useState<Campus[]>([]);
   const [filteredCampuses, setFilteredCampuses] = React.useState<Campus[]>([]);
   const [selectedUniversity, setSelectedUniversity] = React.useState('');
   const [selectedCampus, setSelectedCampus] = React.useState('');
-
-  // Estados de UI
   const [loadingData, setLoadingData] = React.useState(true);
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
@@ -56,7 +48,6 @@ export default function SignUpPage() {
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
 
-  // Busca inicial de dados
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -347,7 +338,7 @@ export default function SignUpPage() {
             </Button>
           </form>
 
-          <div className="relative my-2">
+         <div className="relative my-2">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
             </div>

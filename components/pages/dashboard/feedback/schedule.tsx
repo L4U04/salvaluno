@@ -42,15 +42,12 @@ export default function FeedbackPage() {
     setLoading(true);
 
     try {
-      // Pega o ID do utilizador logado
       const {
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) {
         throw new Error('Utilizador não autenticado.');
       }
-
-      // Insere os dados na tabela 'feedback'
       const { error } = await supabase.from('feedback').insert({
         user_id: user.id,
         category: category,
@@ -66,7 +63,6 @@ export default function FeedbackPage() {
           'Obrigado pela sua sugestão. A sua opinião é muito importante para nós.',
       });
 
-      // Limpa o formulário após o envio
       setContent('');
     } catch (error: Error | unknown) {
       console.error('Erro ao enviar feedback:', error);
