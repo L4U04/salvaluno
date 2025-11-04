@@ -192,8 +192,7 @@ interface UniversityData {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton
-              className="justify-start gap-2.5 px-2.5"
-              asChild>
+              className="justify-start gap-2.5 px-2.5">
               <Instagram className="size-5" />
               <a href="https://www.instagram.com/salvaluno">@salvaluno
               </a>
