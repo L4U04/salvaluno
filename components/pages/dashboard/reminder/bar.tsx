@@ -214,7 +214,7 @@ export default function Bar() {
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="shrink-0">
           <BellRing className="h-5 w-5" />
-          <span className="sr-only">Abrir lembretes</span>
+          <span className="sr-only">Lembretes</span>
         </Button>
       </SheetTrigger>
       <SheetContent className="flex flex-col">

@@ -11,6 +11,7 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import {
+  Instagram,
   BusFront,
   Calendar,
   Cog,
@@ -186,6 +187,16 @@ interface UniversityData {
             >
               <MailQuestionIcon className="size-5" />
               <span className="truncate">Em Breve: Salvaluno Premium</span>
+            
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              className="justify-start gap-2.5 px-2.5"
+              asChild>
+              <Instagram className="size-5" />
+              <a href="https://www.instagram.com/salvaluno">@salvaluno
+              </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
