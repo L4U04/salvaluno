@@ -14,8 +14,10 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import { Eye, EyeOff } from 'lucide-react';
+
+// Interfaces para os dados
 interface University {
   id: string;
   name: string;
@@ -29,6 +31,8 @@ interface Campus {
 export default function SignUpPage() {
   const supabase = createClientComponentClient();
   const router = useRouter();
+
+  // Estados do formulário
   const [form, setForm] = React.useState({
     fullname: '',
     email: '',
@@ -36,27 +40,30 @@ export default function SignUpPage() {
     passwordConfirm: '',
   });
   const [showPassword, setShowPassword] = React.useState(false);
+
+
   const [universities, setUniversities] = React.useState<University[]>([]);
   const [campuses, setCampuses] = React.useState<Campus[]>([]);
   const [filteredCampuses, setFilteredCampuses] = React.useState<Campus[]>([]);
   const [selectedUniversity, setSelectedUniversity] = React.useState('');
-  const [selectedCampus, setSelectedCampus] = React.useState('');
+  const [selectedCampus, setSelectedCampus] = React.useState(''); 
+
+
   const [loadingData, setLoadingData] = React.useState(true);
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState('');
+  const [emailNotConfirmed, setEmailNotConfirmed] = React.useState(false);
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
+  
 
   React.useEffect(() => {
     const fetchData = async () => {
       try {
         const [universitiesRes, campusesRes] = await Promise.all([
           supabase.from('universities').select('id, name').order('name'),
-          supabase
-            .from('campuses')
-            .select('id, name, university_id')
-            .order('name'),
+          supabase.from('campuses').select('id, name, university_id').order('name')
         ]);
 
         if (universitiesRes.error) throw universitiesRes.error;
@@ -64,10 +71,8 @@ export default function SignUpPage() {
 
         setUniversities(universitiesRes.data || []);
         setCampuses(campusesRes.data || []);
-      } catch (err: unknown) {
-        setError(
-          'Não foi possível carregar os dados das universidades e campi.',
-        );
+      } catch (err: any) {
+        setError('Não foi possível carregar os dados das universidades e campi.');
         if (err instanceof Error) {
           console.error(err.message);
         } else {
@@ -82,11 +87,9 @@ export default function SignUpPage() {
 
   const handleUniversityChange = (universityId: string) => {
     setSelectedUniversity(universityId);
-    const filtered = campuses.filter(
-      campus => campus.university_id === universityId,
-    );
+    const filtered = campuses.filter(campus => campus.university_id === universityId);
     setFilteredCampuses(filtered);
-    setSelectedCampus('');
+    setSelectedCampus(''); // Reseta a seleção de campus
   };
 
   const handleCampusChange = (campusId: string) => {
@@ -102,13 +105,13 @@ export default function SignUpPage() {
     e.preventDefault();
     setError('');
     setSuccess('');
-
+    
     if (!selectedCampus) {
-      setError('Por favor, selecione a sua universidade e o seu campus.');
+      setError("Por favor, selecione a sua universidade e o seu campus.");
       return;
     }
     if (form.password !== form.passwordConfirm) {
-      setError('As senhas não coincidem!');
+      setError("As senhas não coincidem!");
       return;
     }
 
@@ -118,13 +121,14 @@ export default function SignUpPage() {
       email: form.email,
       password: form.password,
       options: {
-        data: {
+        data: { 
           full_name: form.fullname,
-          campus_id: selectedCampus,
+          campus_id: selectedCampus
         },
-      },
+        redirectTo: `${location.origin}/login`
+      }
     });
-
+    
     setIsRegistering(false);
 
     if (supabaseError) {
@@ -133,21 +137,21 @@ export default function SignUpPage() {
     }
 
     if (data?.user && !data.user.email_confirmed_at) {
-      setSuccess('Cadastro realizado! Por favor, confirme seu email.');
+      setSuccess("Cadastro realizado! Por favor, confirme seu email.");
+      setEmailNotConfirmed(true);
     } else {
-      setSuccess('Cadastro realizado com sucesso!');
+      setSuccess("Cadastro realizado com sucesso!");
       router.push('/dashboard');
     }
   };
 
   const handleGoogleSignup = async () => {
     if (!selectedCampus) {
-      setError('Por favor, selecione a sua universidade e o seu campus.');
+      setError("Por favor, selecione a sua universidade e o seu campus.");
       return;
     }
     setIsRegistering(true);
     setError('');
-
     Cookies.set('selected_campus_id', selectedCampus, { expires: 5 / 1440 });
 
     await supabase.auth.signInWithOAuth({
@@ -157,22 +161,16 @@ export default function SignUpPage() {
       },
     });
   };
-
+  
   const handleResendConfirmation = async () => {
-    setResendLoading(true);
-    setResendMessage('');
-    const { error: resendError } = await supabase.auth.resend({
-      type: 'signup',
-      email: form.email,
-    });
-    setResendLoading(false);
-    if (resendError) {
-      setResendMessage('Erro ao reenviar email: ' + resendError.message);
-    } else {
-      setResendMessage(
-        'Email de confirmação reenviado! Verifique sua caixa de entrada.',
-      );
-    }
+    setResendLoading(true);setResendMessage('');
+    const { error: resendError } = 
+    await supabase.auth.resend({type: 'signup',email: form.email,});
+    setResendLoading(false);if (resendError) {setResendMessage('Erro ao reenviar email: ' + resendError.message);} 
+    else 
+      {setResendMessage('Email de confirmação reenviado! Verifique sua caixa de entrada.');
+        
+      }
   };
 
   return (
