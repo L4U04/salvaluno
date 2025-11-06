@@ -8,6 +8,7 @@ import Google from '@/components/icons/google';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Image from 'next/image';
 import {
   Select,
   SelectContent,
@@ -41,14 +42,14 @@ export default function SignUpPage() {
   });
   const [showPassword, setShowPassword] = React.useState(false);
 
-
+  // Estados para os seletores
   const [universities, setUniversities] = React.useState<University[]>([]);
   const [campuses, setCampuses] = React.useState<Campus[]>([]);
   const [filteredCampuses, setFilteredCampuses] = React.useState<Campus[]>([]);
   const [selectedUniversity, setSelectedUniversity] = React.useState('');
-  const [selectedCampus, setSelectedCampus] = React.useState(''); 
+  const [selectedCampus, setSelectedCampus] = React.useState(''); // Este é o ID que vamos enviar
 
-
+  // Estados de UI
   const [loadingData, setLoadingData] = React.useState(true);
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
@@ -57,7 +58,7 @@ export default function SignUpPage() {
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
   
-
+  // Busca inicial de dados
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -123,9 +124,11 @@ export default function SignUpPage() {
       options: {
         data: { 
           full_name: form.fullname,
-          campus_id: selectedCampus
+          campus_id: selectedCampus // Enviando o ID do campus
         },
-        redirectTo: `${location.origin}/login`
+        // [CORREÇÃO APLICADA AQUI]
+        // A propriedade correta é 'emailRedirectTo', não 'redirectTo'
+        emailRedirectTo: `${location.origin}/login`
       }
     });
     
@@ -152,7 +155,9 @@ export default function SignUpPage() {
     }
     setIsRegistering(true);
     setError('');
-    Cookies.set('selected_campus_id', selectedCampus, { expires: 5 / 1440 });
+
+    // Salva o campus_id no cookie
+    Cookies.set('selected_campus_id', selectedCampus, { expires: 5 / 1440 }); // Expira em 5 minutos
 
     await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -301,7 +306,7 @@ export default function SignUpPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-2/3 -translate-y-1/2 text-muted-foreground"
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={1O8} />}
                 </button>
               </div>
             </div>
