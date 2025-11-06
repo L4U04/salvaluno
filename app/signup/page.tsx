@@ -6,7 +6,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Cookies from 'js-cookie';
 import Google from '@/components/icons/google';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/input';7
 import { Label } from '@/components/ui/label';
 import {
   Select,
@@ -14,8 +14,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import { Eye, EyeOff } from 'lucide-react';
+
 
 interface University {
   id: string;
@@ -31,7 +32,7 @@ export default function SignUpPage() {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
-  // Estados do formulário
+
   const [form, setForm] = React.useState({
     fullname: '',
     email: '',
@@ -53,16 +54,13 @@ export default function SignUpPage() {
   const [emailNotConfirmed, setEmailNotConfirmed] = React.useState(false);
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
-
+  
   React.useEffect(() => {
     const fetchData = async () => {
       try {
         const [universitiesRes, campusesRes] = await Promise.all([
           supabase.from('universities').select('id, name').order('name'),
-          supabase
-            .from('campuses')
-            .select('id, name, university_id')
-            .order('name'),
+          supabase.from('campuses').select('id, name, university_id').order('name')
         ]);
 
         if (universitiesRes.error) throw universitiesRes.error;
@@ -71,10 +69,12 @@ export default function SignUpPage() {
         setUniversities(universitiesRes.data || []);
         setCampuses(campusesRes.data || []);
       } catch (err: any) {
-        setError(
-          'Não foi possível carregar os dados das universidades e campi.',
-        );
-        console.error(err.message);
+        setError('Não foi possível carregar os dados das universidades e campi.');
+        if (err instanceof Error) {
+          console.error(err.message);
+        } else {
+          console.error(err);
+        }
       } finally {
         setLoadingData(false);
       }
@@ -84,9 +84,7 @@ export default function SignUpPage() {
 
   const handleUniversityChange = (universityId: string) => {
     setSelectedUniversity(universityId);
-    const filtered = campuses.filter(
-      campus => campus.university_id === universityId,
-    );
+    const filtered = campuses.filter(campus => campus.university_id === universityId);
     setFilteredCampuses(filtered);
     setSelectedCampus('');
   };
@@ -104,13 +102,13 @@ export default function SignUpPage() {
     e.preventDefault();
     setError('');
     setSuccess('');
-
+    
     if (!selectedCampus) {
-      setError('Por favor, selecione a sua universidade e o seu campus.');
+      setError("Por favor, selecione a sua universidade e o seu campus.");
       return;
     }
     if (form.password !== form.passwordConfirm) {
-      setError('As senhas não coincidem!');
+      setError("As senhas não coincidem!");
       return;
     }
 
@@ -120,29 +118,33 @@ export default function SignUpPage() {
       email: form.email,
       password: form.password,
       options: {
-        data: {
+        data: { 
           full_name: form.fullname,
-          campus_id: selectedCampus,
+          campus_id: selectedCampus
         },
-      },
+        emailRedirectTo: `${location.origin}/login`
+      }
     });
-
+    
     setIsRegistering(false);
 
     if (supabaseError) {
       setError(supabaseError.message);
-    } else if (data.user && !data.user.email_confirmed_at) {
-      setSuccess('Cadastro realizado! Por favor, confirme seu email.');
+      return;
+    }
+
+    if (data?.user && !data.user.email_confirmed_at) {
+      setSuccess("Cadastro realizado! Por favor, confirme seu email.");
       setEmailNotConfirmed(true);
     } else {
-      setSuccess('Cadastro realizado com sucesso!');
-      router.push('/dashboard');
+      setSuccess("Cadastro realizado com sucesso!");
+      router.push('/login');
     }
   };
 
   const handleGoogleSignup = async () => {
     if (!selectedCampus) {
-      setError('Por favor, selecione a sua universidade e o seu campus.');
+      setError("Por favor, selecione a sua universidade e o seu campus.");
       return;
     }
     setIsRegistering(true);
@@ -157,22 +159,16 @@ export default function SignUpPage() {
       },
     });
   };
-
+  
   const handleResendConfirmation = async () => {
-    setResendLoading(true);
-    setResendMessage('');
-    const { error: resendError } = await supabase.auth.resend({
-      type: 'signup',
-      email: form.email,
-    });
-    setResendLoading(false);
-    if (resendError) {
-      setResendMessage('Erro ao reenviar email: ' + resendError.message);
-    } else {
-      setResendMessage(
-        'Email de confirmação reenviado! Verifique sua caixa de entrada.',
-      );
-    }
+    setResendLoading(true);setResendMessage('');
+    const { error: resendError } = 
+    await supabase.auth.resend({type: 'signup',email: form.email,});
+    setResendLoading(false);if (resendError) {setResendMessage('Erro ao reenviar email: ' + resendError.message);} 
+    else 
+      {setResendMessage('Email de confirmação reenviado! Verifique sua caixa de entrada.');
+        
+      }
   };
 
   return (
@@ -312,7 +308,25 @@ export default function SignUpPage() {
               <p className="text-sm text-red-500 text-center">{error}</p>
             )}
             {success && (
-              <p className="text-sm text-green-500 text-center">{success}</p>
+              <div className="flex flex-col items-center gap-2">
+                <p className="text-sm text-green-500 text-center">{success}</p>
+                {success.includes('confirme') && (
+                  <>
+                    <Button
+                      variant="ghost"
+                      onClick={handleResendConfirmation}
+                      disabled={resendLoading}
+                    >
+                      {resendLoading ? 'Enviando...' : 'Reenviar email de confirmação'}
+                    </Button>
+                    {resendMessage && (
+                      <p className="text-sm text-muted-foreground text-center">
+                        {resendMessage}
+                      </p>
+                    )}
+                  </>
+                )}
+              </div>
             )}
 
             <Button type="submit" disabled={isRegistering}>
@@ -320,7 +334,7 @@ export default function SignUpPage() {
             </Button>
           </form>
 
-          <div className="relative my-2">
+         <div className="relative my-2">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
             </div>
