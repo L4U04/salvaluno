@@ -6,7 +6,8 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Cookies from 'js-cookie';
 import Google from '@/components/icons/google';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/input';7
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
