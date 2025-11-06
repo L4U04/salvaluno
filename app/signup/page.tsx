@@ -138,7 +138,7 @@ export default function SignUpPage() {
       setEmailNotConfirmed(true);
     } else {
       setSuccess("Cadastro realizado com sucesso!");
-      router.push('/dashboard');
+      router.push('/login');
     }
   };
 
@@ -299,7 +299,6 @@ export default function SignUpPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-2/3 -translate-y-1/2 text-muted-foreground"
                 >
-                  {/* [CORREÇÃO APLICADA AQUI] */}
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
