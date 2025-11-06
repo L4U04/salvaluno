@@ -6,7 +6,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Cookies from 'js-cookie';
 import Google from '@/components/icons/google';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';7
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   Select,
@@ -14,10 +14,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 import { Eye, EyeOff } from 'lucide-react';
-
-
 interface University {
   id: string;
   name: string;
@@ -31,8 +29,6 @@ interface Campus {
 export default function SignUpPage() {
   const supabase = createClientComponentClient();
   const router = useRouter();
-
-
   const [form, setForm] = React.useState({
     fullname: '',
     email: '',
@@ -40,27 +36,27 @@ export default function SignUpPage() {
     passwordConfirm: '',
   });
   const [showPassword, setShowPassword] = React.useState(false);
-
   const [universities, setUniversities] = React.useState<University[]>([]);
   const [campuses, setCampuses] = React.useState<Campus[]>([]);
   const [filteredCampuses, setFilteredCampuses] = React.useState<Campus[]>([]);
   const [selectedUniversity, setSelectedUniversity] = React.useState('');
   const [selectedCampus, setSelectedCampus] = React.useState('');
-
   const [loadingData, setLoadingData] = React.useState(true);
   const [isRegistering, setIsRegistering] = React.useState(false);
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState('');
-  const [emailNotConfirmed, setEmailNotConfirmed] = React.useState(false);
   const [resendLoading, setResendLoading] = React.useState(false);
   const [resendMessage, setResendMessage] = React.useState('');
-  
+
   React.useEffect(() => {
     const fetchData = async () => {
       try {
         const [universitiesRes, campusesRes] = await Promise.all([
           supabase.from('universities').select('id, name').order('name'),
-          supabase.from('campuses').select('id, name, university_id').order('name')
+          supabase
+            .from('campuses')
+            .select('id, name, university_id')
+            .order('name'),
         ]);
 
         if (universitiesRes.error) throw universitiesRes.error;
@@ -68,8 +64,10 @@ export default function SignUpPage() {
 
         setUniversities(universitiesRes.data || []);
         setCampuses(campusesRes.data || []);
-      } catch (err: any) {
-        setError('Não foi possível carregar os dados das universidades e campi.');
+      } catch (err: unknown) {
+        setError(
+          'Não foi possível carregar os dados das universidades e campi.',
+        );
         if (err instanceof Error) {
           console.error(err.message);
         } else {
@@ -84,7 +82,9 @@ export default function SignUpPage() {
 
   const handleUniversityChange = (universityId: string) => {
     setSelectedUniversity(universityId);
-    const filtered = campuses.filter(campus => campus.university_id === universityId);
+    const filtered = campuses.filter(
+      campus => campus.university_id === universityId,
+    );
     setFilteredCampuses(filtered);
     setSelectedCampus('');
   };
@@ -102,13 +102,13 @@ export default function SignUpPage() {
     e.preventDefault();
     setError('');
     setSuccess('');
-    
+
     if (!selectedCampus) {
-      setError("Por favor, selecione a sua universidade e o seu campus.");
+      setError('Por favor, selecione a sua universidade e o seu campus.');
       return;
     }
     if (form.password !== form.passwordConfirm) {
-      setError("As senhas não coincidem!");
+      setError('As senhas não coincidem!');
       return;
     }
 
@@ -118,14 +118,13 @@ export default function SignUpPage() {
       email: form.email,
       password: form.password,
       options: {
-        data: { 
+        data: {
           full_name: form.fullname,
-          campus_id: selectedCampus
+          campus_id: selectedCampus,
         },
-        emailRedirectTo: `${location.origin}/login`
-      }
+      },
     });
-    
+
     setIsRegistering(false);
 
     if (supabaseError) {
@@ -134,17 +133,16 @@ export default function SignUpPage() {
     }
 
     if (data?.user && !data.user.email_confirmed_at) {
-      setSuccess("Cadastro realizado! Por favor, confirme seu email.");
-      setEmailNotConfirmed(true);
+      setSuccess('Cadastro realizado! Por favor, confirme seu email.');
     } else {
-      setSuccess("Cadastro realizado com sucesso!");
-      router.push('/login');
+      setSuccess('Cadastro realizado com sucesso!');
+      router.push('/dashboard');
     }
   };
 
   const handleGoogleSignup = async () => {
     if (!selectedCampus) {
-      setError("Por favor, selecione a sua universidade e o seu campus.");
+      setError('Por favor, selecione a sua universidade e o seu campus.');
       return;
     }
     setIsRegistering(true);
@@ -159,16 +157,22 @@ export default function SignUpPage() {
       },
     });
   };
-  
+
   const handleResendConfirmation = async () => {
-    setResendLoading(true);setResendMessage('');
-    const { error: resendError } = 
-    await supabase.auth.resend({type: 'signup',email: form.email,});
-    setResendLoading(false);if (resendError) {setResendMessage('Erro ao reenviar email: ' + resendError.message);} 
-    else 
-      {setResendMessage('Email de confirmação reenviado! Verifique sua caixa de entrada.');
-        
-      }
+    setResendLoading(true);
+    setResendMessage('');
+    const { error: resendError } = await supabase.auth.resend({
+      type: 'signup',
+      email: form.email,
+    });
+    setResendLoading(false);
+    if (resendError) {
+      setResendMessage('Erro ao reenviar email: ' + resendError.message);
+    } else {
+      setResendMessage(
+        'Email de confirmação reenviado! Verifique sua caixa de entrada.',
+      );
+    }
   };
 
   return (

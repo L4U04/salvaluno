@@ -12,7 +12,7 @@ export default defineConfig([
       'dist/**',
       'src/lib/database.types.ts'
     ],
-    files: ['}'],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: { js },
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
