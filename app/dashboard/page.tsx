@@ -28,6 +28,7 @@ type ConfigurationsContentProps = {
   user: User | null;
 };
 
+// 3. APLIQUE O TIPO ': ConfigurationsContentProps' AOS PARÂMETROS
 function ConfigurationsContent({
   profile,
   setProfile,
@@ -62,6 +63,7 @@ export default function Page() {
   const [profile, setProfile] = React.useState<Profile | null>(null);
   const [loading, setLoading] = React.useState(true);
 
+  // Efeito para buscar os dados iniciais do utilizador e do perfil
   React.useEffect(() => {
     const fetchInitialData = async () => {
       setLoading(true);
@@ -96,6 +98,7 @@ export default function Page() {
     fetchInitialData();
   }, [supabase]);
 
+  // Efeito para lidar com a atualização do campus após o registo
   React.useEffect(() => {
     const attemptProfileUpdate = async (
       userId: string,
@@ -144,6 +147,7 @@ export default function Page() {
           return;
         }
 
+        // Atualiza o estado local — use undefined para campos opcionais (compatível com Profile)
         setProfile(prev =>
           prev ? { ...prev, campus_id: campusId } : {
             full_name: undefined,

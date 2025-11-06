@@ -68,8 +68,11 @@ export default function UserProfile({ profile, setProfile, loading, user }: User
   const [passwordError, setPasswordError] = React.useState('');
   const [passwordSuccess, setPasswordSuccess] = React.useState('');
   const [isPasswordChanging, setIsPasswordChanging] = React.useState(false);
+  const [isDeleting, setIsDeleting] = React.useState(false);
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
+
+  // Sincroniza o estado local do input com os dados do perfil que vêm do componente pai
   React.useEffect(() => {
     if (profile) {
       setInputSemester(profile.semestre_ingresso || '');
@@ -100,6 +103,8 @@ export default function UserProfile({ profile, setProfile, loading, user }: User
         .update({ avatar_url: finalUrl })
         .eq('id', user.id);
       if (updateError) throw updateError;
+
+      // Chama a função do pai para atualizar o estado partilhado
       setProfile(prev => (prev ? { ...prev, avatar_url: finalUrl } : null));
 
       toast.success('Sucesso', {
@@ -128,6 +133,7 @@ export default function UserProfile({ profile, setProfile, loading, user }: User
         description: 'Não foi possível salvar o semestre.',
       });
     } else {
+      // Chama a função do pai para atualizar o estado partilhado
       setProfile(prev =>
         prev ? { ...prev, semestre_ingresso: inputSemester } : null,
       );
@@ -165,6 +171,33 @@ export default function UserProfile({ profile, setProfile, loading, user }: User
       setIsPasswordChanging(false);
     }
   };
+
+  const handleRemoveAccount = async () => {
+    setIsDeleting(true);
+    try {
+      if (!user) return;
+      const response = await fetch('/api/delete-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: user.id }),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        await supabase.auth.signOut();
+        router.push('/login');
+      } else {
+        console.error('Erro ao remover conta:', result.error);
+        toast.error('Erro', {
+          description: 'Não foi possível remover a conta.',
+        });
+      }
+    } catch (err) {
+      console.error('Erro inesperado:', err);
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
   const handleSwitchAccount = async () => {
     try {
       const { error } = await supabase.auth.signOut();

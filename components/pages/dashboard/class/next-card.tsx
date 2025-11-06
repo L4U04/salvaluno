@@ -8,9 +8,10 @@ import { differenceInMinutes, isBefore, set } from 'date-fns';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 
+// Interface atualizada para incluir o professor
 interface ClassSession {
   subjectName: string;
-  professor?: string;
+  professor?: string; // Campo adicionado
   room?: string;
   day: 'Seg' | 'Ter' | 'Qua' | 'Qui' | 'Sex' | 'Sab';
   startTime: string;
@@ -41,6 +42,8 @@ export function NextCard() {
       } = await supabase.auth.getUser();
 
       if (user) {
+        // ---- INÍCIO DA MODIFICAÇÃO ----
+        // Busca os dados do Supabase em vez do localStorage
         const { data, error } = await supabase
           .from('classes')
           .select(
@@ -52,6 +55,7 @@ export function NextCard() {
           console.error('Erro ao buscar aulas:', error);
           setSessions([]);
         } else {
+          // Mapeia os dados do banco para o formato do componente (snake_case para camelCase)
           const mappedSessions = data.map(s => ({
             subjectName: s.subject_name,
             professor: s.professor,
@@ -63,6 +67,7 @@ export function NextCard() {
           }));
           setSessions(mappedSessions);
         }
+        // ---- FIM DA MODIFICAÇÃO ----
       } else {
         setSessions([]);
       }
@@ -139,6 +144,7 @@ export function NextCard() {
         {nextClass ? (
           <div>
             <p className="text-2xl font-bold">{nextClass.subjectName}</p>
+            {/* Exibe o nome do professor */}
             <p className="text-muted-foreground">{nextClass.professor}</p>
             <p className="font-semibold mt-2">{nextClass.room}</p>
             <p className="text-sm text-muted-foreground">

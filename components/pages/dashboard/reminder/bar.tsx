@@ -47,7 +47,7 @@ import * as React from 'react';
 type Priority = 'alta' | 'media' | 'baixa';
 
 interface ReminderItem {
-  id: string;
+  id: string; // Alterado de number para string (UUID)
   text: string;
   subject?: string;
   date?: string;
@@ -142,7 +142,7 @@ export default function Bar() {
         );
       } else {
         const newReminder: ReminderItem = {
-          id: userId,
+          id: userId, // Gerar UUID em vez de Date.now()
           text: reminderText.trim(),
           date: dateToSave,
           priority: reminderPriority,

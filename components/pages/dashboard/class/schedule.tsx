@@ -396,6 +396,7 @@ export function Schedule() {
     }
 
     const sessionData: ClassSession = {
+      // [CORRIGIDO]
       id: currentSession.id || uuidv4(),
       subjectName: subjectNameTrimmed,
       professor: currentSession.professor || null,

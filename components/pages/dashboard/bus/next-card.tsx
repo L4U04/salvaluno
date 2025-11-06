@@ -8,6 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { differenceInMinutes, set } from 'date-fns';
 import { BusFront, Clock } from 'lucide-react';
 
+// --- Interfaces para os dados do ônibus ---
 interface ScheduleData {
   voltas?: {
     horario_inicio: string;
@@ -35,6 +36,7 @@ interface NextBusInfo {
   busTime: Date;
 }
 
+// --- Funções Auxiliares ---
 
 const calculateCountdown = (targetTime: Date, now: Date) => {
   const totalMinutes = differenceInMinutes(targetTime, now);
@@ -60,8 +62,10 @@ const findNextBus = (
     route.bus_schedules
       .filter(schedule => schedule.valid_on === todayType)
       .forEach(schedule => {
+        // Lógica para o formato UFRB
         if (schedule.schedule.voltas) {
           schedule.schedule.voltas
+            // [CORREÇÃO APLICADA AQUI] O filtro foi removido.
             .forEach(volta => {
               const [hour, minute] = volta.horario_inicio
                 .split(':')
@@ -76,6 +80,7 @@ const findNextBus = (
               });
             });
         }
+        // Lógica para o formato UFBA
         if (
           schedule.schedule.tipo === 'partidas_fixas' &&
           schedule.schedule.horarios
@@ -106,6 +111,7 @@ const findNextBus = (
   return null;
 };
 
+// --- Componente Principal ---
 export default function NextCard() {
   const supabase = createClientComponentClient();
   const [nextBus, setNextBus] = React.useState<NextBusInfo | null>(null);

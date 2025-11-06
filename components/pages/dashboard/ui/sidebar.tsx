@@ -28,6 +28,7 @@ interface DashboardSidebarProps extends React.ComponentProps<typeof Sidebar> {
   profile: {
     full_name?: string;
     avatar_url?: string;
+    // Add other expected profile fields here if needed
   } | null;
   user: { id: string; email?: string } | null;
   loading: boolean;
@@ -56,7 +57,8 @@ const [activeItem, setActiveItem] = React.useState('dashboard');
 
 if (!user?.id || !profile) return;
 
- const campusId = (profile as any).campus_id; 
+ const campusId = (profile as any).campus_id; // Pega o campus_id do perfil
+
 if (!campusId) {
 console.error('Sidebar: Perfil não contém um campus_id.');
 return;
@@ -81,22 +83,27 @@ campusError.message,
 if (campusData) {
 
 const academicUrl =
-(campusData.universities as any)?.academic_system_url ||
-(campusData.universities as any)?.[0]?.academic_system_url; 
+(campusData.universities as any)?.academic_system_url || // Se for 1-para-1
+(campusData.universities as any)?.[0]?.academic_system_url; // Se for 1-para-muitos
+
 setUniversityData({
  has_circular_bus: campusData.has_circular_bus,
-academic_system_url: academicUrl || null,
+academic_system_url: academicUrl || null, // Armazena o link no estado
  });
  }
  };
 
+ // Só executa a busca quando o 'loading' da página principal terminar
 if (!loading) {
  fetchUniversityData();
  }
- }, [profile, user, loading, supabase]); 
+ }, [profile, user, loading, supabase]); // Dependências corretas
+
+// No seu tipo UniversityData, mude o nome se quiser
 interface UniversityData {
   has_circular_bus: boolean;
-  academic_system_url: string | null;}
+  academic_system_url: string | null; // Este nome é só interno do React, pode ser o que você quiser
+}
 
   const handleItemClick = (
     itemName: 'dashboard' | 'bus' | 'class' | 'configurations' | 'feedback',

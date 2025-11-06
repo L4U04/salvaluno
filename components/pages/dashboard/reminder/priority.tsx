@@ -12,7 +12,7 @@ import { AlertTriangle, BellRing } from 'lucide-react';
 type Priority = 'alta' | 'media' | 'baixa';
 
 interface ReminderItem {
-  id: string;
+  id: string; // Alterado de number para string para consistência com UUID
   text: string;
   subject?: string;
   date?: string;
@@ -20,6 +20,7 @@ interface ReminderItem {
 }
 
 export default function PriorityCard() {
+  // ---- INÍCIO DA MODIFICAÇÃO ----
   const [reminders, setReminders] = React.useState<ReminderItem[]>([]);
   const [loading, setLoading] = React.useState(true);
   const supabase = createClientComponentClient();
@@ -32,6 +33,7 @@ export default function PriorityCard() {
       } = await supabase.auth.getUser();
 
       if (user) {
+        // Busca os dados do Supabase
         const { data, error } = await supabase
           .from('reminders')
           .select('id, text, date, priority')
@@ -51,10 +53,13 @@ export default function PriorityCard() {
 
     fetchReminders();
   }, [supabase]);
+  // ---- FIM DA MODIFICAÇÃO ----
 
   const priorityReminders = reminders
     .filter(r => r.priority === 'alta')
     .slice(0, 2);
+
+  // Usa o estado 'loading' em vez de 'hasMounted'
   if (loading) {
     return (
       <Card>

@@ -15,6 +15,7 @@ export default function Dashboard() {
  );
 const [loading, setLoading] = React.useState(true);
 
+ // O 'useEffect' que já corrigimos (está CORRETO)
  React.useEffect(() => {
  const fetchBusCardData = async () => {
  try {
@@ -75,8 +76,8 @@ setLoading(false);
  }
 
  const gridColsClass = hasBusService
- ? 'md:grid-cols-3' 
- : 'md:grid-cols-2'; 
+ ? 'md:grid-cols-3' // <--- 3 colunas a partir de 'md'
+ : 'md:grid-cols-2'; // <--- 2 colunas a partir de 'md'
 
 return (
 <div className="w-full max-w-5xl mx-auto">
